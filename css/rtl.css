@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Quranora - RTL & Urdu Typography Stylesheet
+   ========================================================================== */
+
+body.urdu-mode {
+  font-family: var(--font-urdu), var(--font-sans);
+  direction: rtl;
+  text-align: right;
+}
+
+body.urdu-mode h1,
+body.urdu-mode h2,
+body.urdu-mode h3,
+body.urdu-mode h4,
+body.urdu-mode .section-title,
+body.urdu-mode .hero-title {
+  font-family: var(--font-urdu), var(--font-sans);
+  line-height: 1.65;
+  letter-spacing: normal;
+}
+
+body.urdu-mode p,
+body.urdu-mode .section-subtitle,
+body.urdu-mode .hero-subtitle,
+body.urdu-mode .step-desc,
+body.urdu-mode .course-tagline {
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* Nav & Header RTL adjustments */
+body.urdu-mode .brand-logo {
+  flex-direction: row;
+}
+
+body.urdu-mode .logo-tagline {
+  letter-spacing: normal;
+}
+
+/* Course and Teacher Card adjustments */
+body.urdu-mode .course-features li,
+body.urdu-mode .pricing-features-list li,
+body.urdu-mode .spotlight-feat-item,
+body.urdu-mode .trust-item,
+body.urdu-mode .detail-item {
+  text-align: right;
+}
+
+body.urdu-mode .course-features li i,
+body.urdu-mode .pricing-features-list li i {
+  margin-left: 0.65rem;
+  margin-right: 0;
+}
+
+body.urdu-mode .teacher-gender {
+  right: auto;
+  left: 1rem;
+}
+
+body.urdu-mode .teacher-details-list .detail-item i {
+  margin-left: 0.65rem;
+  margin-right: 0;
+}
+
+body.urdu-mode .modal-summary-card {
+  text-align: right;
+}
+
+body.urdu-mode .faq-question i {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+body.urdu-mode .footer-col h4::after {
+  left: auto;
+  right: 0;
+}
+
+body.urdu-mode .footer-link:hover {
+  transform: translateX(-3px);
+}
+
+body.urdu-mode .floating-whatsapp-btn {
+  right: auto;
+  left: 25px;
+}
+
+body.urdu-mode .back-to-top {
+  right: auto;
+  left: 32px;
+}
+
+body.urdu-mode .hero-floating-card {
+  left: auto;
+  right: -20px;
+}
+
+body.urdu-mode .hero-cta-group {
+  justify-content: flex-start;
+}
+
+body.urdu-mode .currency-picker-box {
+  flex-direction: row;
+}
