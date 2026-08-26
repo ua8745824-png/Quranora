@@ -49,13 +49,13 @@ const teachersData = [
     audioVerse: "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ"
   },
   {
-    id: "maulana-usman",
+    id: "maulana-ammar-shah",
     gender: "male",
-    nameEn: "Maulana Muhammad Usman",
-    nameUr: "مولانا محمد عثمان",
+    nameEn: "Maulana Syed Ammar Hussain Shah",
+    nameUr: "مولانا سید عمار حسین شاہ",
     titleEn: "Senior Islamic Scholar & Tafseer Specialist",
     titleUr: "سینئر عالمِ دین و نگران شعبہ ترجمہ و تفسیر",
-    image: "assets/images/scholar_aalim_usman.png",
+    image: "assets/images/maulana_syed_ammar_shah.png",
     experienceEn: "8+ Years in Quranic & Islamic Higher Education",
     experienceUr: "8 سال سے زائد تدریسی و علمی تجربہ",
     qualificationEn: "Shahadat-ul-Alimiyyah (Dars-e-Nizami) & M.Phil in Islamic Studies",
