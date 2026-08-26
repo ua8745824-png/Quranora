@@ -19,7 +19,7 @@ Quranora is a premier, modern, trustworthy Online Quran Academy serving students
   5. **Tafseer-ul-Quran** (Historical context & modern application)
   6. **Islamic Studies for Kids** (Duas, Hadith, Seerah & Akhlaq)
   7. **Namaz Course** (Sunnah method of Salah, Wudu & Adhkar)
-- 👨‍🏫 **Certified Faculty & Recitation Player:** Male and female tutors featuring **Al-Qari Syed Umar Ali** and **Al-Qari Mueez ur Rehman** with live Tajweed audio previews.
+- 👨‍🏫 **Certified Faculty & Recitation Player:** Male and female tutors featuring **Al-Qari Syed Umar Ali**, **Al-Qari Mueez ur Rehman**, and **Maulana Muhammad Usman** (Aalim & M.Phil Islamic Studies) with live audio previews.
 - 🎬 **Soulful Tilawat Section:** Direct integration with official YouTube channels: [@qarisyedumaraliofficial](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW) and [@alqarimueezurrehman](https://youtube.com/@alqarimueezurrehman?si=OWMnUcMmC2T-0KlJ).
 - 💱 **Multi-Currency Pricing Calculator:** Live rates for USD ($), GBP (£), CAD ($), AUD ($), AED (د.إ), EUR (€), and PKR (₨) with a 10% Sibling/Family discount calculator.
 - 📱 **1-Click WhatsApp Trial Booking:** Form validation and automated WhatsApp message generation.

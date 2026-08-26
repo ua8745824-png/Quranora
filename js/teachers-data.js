@@ -49,6 +49,28 @@ const teachersData = [
     audioVerse: "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ"
   },
   {
+    id: "maulana-usman",
+    gender: "male",
+    nameEn: "Maulana Muhammad Usman",
+    nameUr: "مولانا محمد عثمان",
+    titleEn: "Senior Islamic Scholar & Tafseer Specialist",
+    titleUr: "سینئر عالمِ دین و نگران شعبہ ترجمہ و تفسیر",
+    image: "assets/images/scholar_aalim_usman.png",
+    experienceEn: "8+ Years in Quranic & Islamic Higher Education",
+    experienceUr: "8 سال سے زائد تدریسی و علمی تجربہ",
+    qualificationEn: "Shahadat-ul-Alimiyyah (Dars-e-Nizami) & M.Phil in Islamic Studies",
+    qualificationUr: "عالمِ دین (شہادۃ العالمیہ) و ایم فل اسلامیات",
+    languagesEn: "English, Urdu, Arabic",
+    languagesUr: "انگلش، اردو، عربی",
+    rating: 5.0,
+    reviewsCount: 178,
+    studentsTaught: "450+ Students Worldwide",
+    bioEn: "Accomplished Aalim and M.Phil Islamic scholar. Expert in guiding adult learners and youth through Quran Translation (Tarjuma), Tafseer, Hadith studies, and Islamic Jurisprudence (Fiqh).",
+    bioUr: "مستند عالمِ دین و ایم فل اسکالر۔ ترجمہ و تفسیرِ قرآن، فہمِ حدیث، فقہی احکام اور نوجوان نسل کی فکری و اسلامی تربیت کے ممتاز استاد۔",
+    audioSampleText: "Surah Al-Fatiha (Tarjuma & Tafseer Recitation)",
+    audioVerse: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ"
+  },
+  {
     id: "ustadha-maryam",
     gender: "female",
     nameEn: "Ustadha Maryam Fatima",
