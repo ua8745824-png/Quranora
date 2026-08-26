@@ -71,6 +71,28 @@ const teachersData = [
     audioVerse: "اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ"
   },
   {
+    id: "qari-hasnain-muavia",
+    gender: "male",
+    nameEn: "Qari Hasnain Muavia",
+    nameUr: "القارئ حسنین معاویہ",
+    titleEn: "Hifz-ul-Quran Specialist & Tajweed Instructor",
+    titleUr: "استاد شعبہ حفظِ قرآن و ماہر تجوید",
+    image: "assets/images/qari_hasnain_muavia.jpg",
+    experienceEn: "4+ Years Teaching Hifz & Quranic Studies",
+    experienceUr: "4 سال سے زائد حفظ و تدریسِ قرآن کا تجربہ",
+    qualificationEn: "Hafiz-ul-Quran & Certified Qari (Tajweed Ijazah)",
+    qualificationUr: "حافظِ قرآن و سندِ قراءت و تجوید القرآن",
+    languagesEn: "English, Urdu, Arabic",
+    languagesUr: "انگلش، اردو، عربی",
+    rating: 4.98,
+    reviewsCount: 142,
+    studentsTaught: "250+ Huffaz & Students Mentored",
+    bioEn: "Dedicated Hifz-ul-Quran instructor with 4 years of proven experience guiding students through systematic memorization, daily Sabaq, Sabqi, and Manzil revision with accurate Tajweed.",
+    bioUr: "گزشتہ 4 سال سے شعبہ حفظ القرآن سے وابستہ۔ طلبہ کو آسان فہم انداز میں سبق، سبقی اور منزل کی پختگی کے ساتھ حفظ کروانے اور تجوید سکھانے کے ماہر۔",
+    audioSampleText: "Surah Al-Mulk (Hifz Recitation)",
+    audioVerse: "تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ"
+  },
+  {
     id: "ustadha-maryam",
     gender: "female",
     nameEn: "Ustadha Maryam Fatima",
