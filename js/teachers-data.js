@@ -3,13 +3,13 @@
  */
 const teachersData = [
   {
-    id: "qari-mueez",
+    id: "qari-syed-umar",
     gender: "male",
-    nameEn: "Al-Qari Mueez ur Rehman",
-    nameUr: "القارئ معیز الرحمن",
+    nameEn: "Al-Qari Syed Umar Ali",
+    nameUr: "القارئ سید عمر علی",
     titleEn: "Lead Qari & Senior Tajweed Specialist",
     titleUr: "چیف قاری و سینئر ماہر تجوید",
-    image: "assets/images/teacher_male_1.jpg",
+    image: "assets/images/qari_syed_umar_ali.jpg",
     experienceEn: "10+ Years Teaching & Tilawat Expertise",
     experienceUr: "10 سال سے زائد تدریسی و تلاوت کا تجربہ",
     qualificationEn: "Shahadat-ul-Alimiyyah & Tajweed Ijazah (Renowned Qari)",
@@ -19,7 +19,7 @@ const teachersData = [
     rating: 5.0,
     reviewsCount: 215,
     studentsTaught: "700+ Students Worldwide",
-    youtubeUrl: "https://youtube.com/@alqarimueezurrehman?si=OWMnUcMmC2T-0KlJ",
+    youtubeUrl: "https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW",
     bioEn: "Renowned Qari known for soul-stirring Tilawat and deep phonetics mastery. Trains students in accurate Makharij, breath control, and melodious recitation.",
     bioUr: "خوش الحان قاری اور مستند استاد جن کی تلاوت قرآن کے دلنشین انداز کو دنیا بھر میں پسند کیا جاتا ہے۔ تجوید اور مخارج کے بہترین ماہر۔",
     audioSampleText: "Listen to Official Tilawat on YouTube",
