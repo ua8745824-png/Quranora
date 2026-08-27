@@ -52,26 +52,6 @@ _Registered via Quranora.com official portal_`;
       const encodedMsg = encodeURIComponent(whatsappText);
       const whatsappUrl = `https://wa.me/${ACADEMY_WHATSAPP_NUMBER}?text=${encodedMsg}`;
 
-      // Save/Register user to localStorage
-      const authUser = {
-        studentName: studentName,
-        age: age,
-        country: country,
-        phone: phone,
-        email: email,
-        course: course,
-        teacherPref: teacherPref,
-        days: days,
-        timeSlot: timeSlot,
-        trialDay: 1, // Start on Day 1
-        registeredAt: new Date().toLocaleDateString()
-      };
-      localStorage.setItem("quranora_auth_user", JSON.stringify(authUser));
-
-      if (window.onAuthUserChanged) {
-        window.onAuthUserChanged(authUser);
-      }
-
       // Update Modal content
       if (modalSummary) {
         modalSummary.innerHTML = `
@@ -81,9 +61,6 @@ _Registered via Quranora.com official portal_`;
             <p><strong>Country:</strong> ${country}</p>
             <p><strong>Teacher Preference:</strong> ${teacherPref}</p>
             <p><strong>Preferred Timing:</strong> ${days} @ ${timeSlot}</p>
-            <div style="margin-top: 0.75rem; padding: 0.6rem; background: rgba(207,168,74,0.15); border-radius: 8px; font-size: 0.85rem; color: var(--primary-900);">
-              🌟 <strong>Account Created:</strong> Your 3-Day Free Trial is active. You can now access your Student Dashboard!
-            </div>
           </div>
         `;
       }

@@ -85,11 +85,6 @@
           <i class="fab fa-whatsapp"></i>
         </a>
 
-        <!-- Portal / Sign In Button -->
-        <button class="btn btn-outline-gold btn-sm btn-nav-portal" id="btnNavPortal" onclick="handleNavPortalClick()" aria-label="Student Portal">
-          <i class="fas fa-user-circle"></i> <span id="navPortalText" data-i18n="btnSignIn">Portal / Login</span>
-        </button>
-
         <!-- Book Free Trial CTA Button -->
         <a href="#free-trial" class="btn btn-gold btn-sm" data-i18n="btnBookTrial">
           Book Free Trial
@@ -128,9 +123,6 @@
       <a href="#teachers" class="mobile-nav-link" data-i18n="navTeachers">Teachers <i class="fas fa-chevron-right"></i></a>
       <a href="#tilawat-channel" class="mobile-nav-link">Tilawat Videos <i class="fas fa-chevron-right"></i></a>
       <a href="#fees" class="mobile-nav-link" data-i18n="navFees">Fees & Plans <i class="fas fa-chevron-right"></i></a>
-      <a href="javascript:void(0)" onclick="handleNavPortalClick()" class="mobile-nav-link" style="color: var(--accent-gold); font-weight: 700;">
-        <i class="fas fa-user-circle"></i> <span id="mobileNavPortalText" data-i18n="navPortal">Student Portal</span> <i class="fas fa-arrow-right"></i>
-      </a>
       <a href="#reviews" class="mobile-nav-link" data-i18n="navReviews">Reviews <i class="fas fa-chevron-right"></i></a>
       <a href="#faq" class="mobile-nav-link" data-i18n="navFaq">FAQs <i class="fas fa-chevron-right"></i></a>
       <a href="#contact" class="mobile-nav-link" data-i18n="navContact">Contact Us <i class="fas fa-chevron-right"></i></a>
@@ -139,9 +131,6 @@
     <div class="mobile-nav-footer">
       <button class="lang-toggle-btn btn-block" id="langMobileBtn">
         <span>اردو زبان میں دیکھیں</span> <i class="fas fa-globe"></i>
-      </button>
-      <button class="btn btn-outline-gold btn-block" onclick="handleNavPortalClick()">
-        <i class="fas fa-user-circle"></i> <span id="mobileNavPortalBtnText" data-i18n="btnSignIn">Portal / Login</span>
       </button>
       <a href="#free-trial" class="btn btn-gold btn-block" data-i18n="btnBookTrial">
         <i class="fas fa-calendar-check"></i> Book Free Trial
@@ -701,71 +690,37 @@
   </section>
 
   <!-- ==========================================================================
-       10. Fees Section & 3-Day Free Trial Evaluation Path
+       10. Fees Section & Currency Calculator
        ========================================================================== -->
   <section class="section" id="fees">
     <div class="container">
       <div class="section-header reveal-on-scroll">
-        <span class="section-badge gold" data-i18n="feesPublicBadge">3-Day Evaluation Trial</span>
-        <h2 class="section-title" data-i18n="feesPublicHeading">Personalized Plans &amp; Transparent Pricing</h2>
+        <span class="section-badge" data-i18n="navFees">Transparent Tuition</span>
+        <h2 class="section-title" data-i18n="feesHeading">Simple &amp; Affordable Plans</h2>
         <div class="ornament-separator"><i class="fas fa-star-and-crescent"></i></div>
-        <p class="section-subtitle" data-i18n="feesPublicSubheading">
-          We evaluate each student's starting level and learning pace through a 3-Day Free Trial before revealing customized tuition packages on your Student Dashboard.
+        <p class="section-subtitle" data-i18n="feesSubheading">
+          Transparent monthly fee packages with no hidden admission charges. Select your currency below.
         </p>
       </div>
 
-      <!-- 3-Step Trial Evaluation Roadmap -->
-      <div class="trial-roadmap-card reveal-on-scroll">
-        <div class="trial-roadmap-header">
-          <span class="badge-trial-info"><i class="fas fa-shield-halved"></i> 100% Risk-Free Evaluation</span>
-          <h3>How Our 3-Day Free Trial Works Before Tuition Enrollment</h3>
+      <!-- Currency Switcher & Sibling Discount Toggle -->
+      <div class="pricing-controls reveal-on-scroll">
+        <div class="currency-picker-box">
+          <label for="currencySelector" data-i18n="currencyLabel"><i class="fas fa-money-bill-wave"></i> Select Currency:</label>
+          <select id="currencySelector" class="currency-select" aria-label="Choose Currency">
+            <!-- Populated by JavaScript -->
+          </select>
         </div>
-        <div class="trial-roadmap-grid">
-          <div class="trial-roadmap-step">
-            <div class="step-badge">Day 01</div>
-            <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
-            <h4 data-i18n="trialStep1Title">Day 1: Level Assessment</h4>
-            <p data-i18n="trialStep1Desc">Teacher assesses Makharij, pronunciation, and reading baseline.</p>
-          </div>
-          <div class="trial-roadmap-arrow"><i class="fas fa-arrow-right"></i></div>
-          <div class="trial-roadmap-step">
-            <div class="step-badge">Day 02</div>
-            <div class="step-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            <h4 data-i18n="trialStep2Title">Day 2: Live Teaching</h4>
-            <p data-i18n="trialStep2Desc">Experience 1-on-1 personalized teaching tailored to student pace.</p>
-          </div>
-          <div class="trial-roadmap-arrow"><i class="fas fa-arrow-right"></i></div>
-          <div class="trial-roadmap-step highlighted">
-            <div class="step-badge-gold">Day 03 🎉</div>
-            <div class="step-icon-gold"><i class="fas fa-unlock-keyhole"></i></div>
-            <h4 data-i18n="trialStep3Title">Day 3: Plans Unlocked!</h4>
-            <p data-i18n="trialStep3Desc">Receive evaluation report and unlock customized course pricing on your dashboard.</p>
-          </div>
-        </div>
+
+        <label class="sibling-discount-badge-toggle">
+          <input type="checkbox" id="siblingDiscountToggle" />
+          <span data-i18n="discountBannerText">🎉 Sibling &amp; Family Discount: Apply 10% OFF (2+ Family Members)</span>
+        </label>
       </div>
 
-      <!-- Pricing Plans Grid (Populated via pricing-data.js & app.js) -->
+      <!-- Pricing Plans Grid (Populated via pricing-data.js) -->
       <div class="pricing-grid reveal-on-scroll" id="pricingContainer">
-        <!-- Rendered by JavaScript: Gated Plan Structure with Direct Free Trial CTA -->
-      </div>
-      
-      <!-- Free Trial Promotion Banner -->
-      <div class="pricing-unlock-cta-banner reveal-on-scroll">
-        <div class="pricing-cta-text">
-          <i class="fas fa-hand-holding-heart"></i>
-          <div>
-            <h4>Ready to explore Quran learning with zero obligation?</h4>
-            <p>Book your 3-Day Free Trial today. No credit card or registration charges required.</p>
-          </div>
-        </div>
-        <div class="pricing-cta-actions">
-          <a href="#free-trial" class="btn btn-gold btn-md" data-i18n="btnStartTrialToUnlock">
-            <i class="fas fa-calendar-check"></i> Start 3-Day Trial to Unlock
-          </a>
-          <button type="button" class="btn btn-outline-white btn-md" onclick="handleNavPortalClick()">
-            <i class="fas fa-user-circle"></i> View Student Portal
-          </button>
-        </div>
+        <!-- Rendered by JavaScript -->
       </div>
     </div>
   </section>
@@ -1216,163 +1171,6 @@
         <button type="button" class="btn btn-outline btn-block" id="modalCloseBtn" data-i18n="btnCloseModal">
           Close
         </button>
-      </div>
-  <!-- ==========================================================================
-       18. User Authentication & Profile Privacy Modal
-       ========================================================================== -->
-  <div class="modal-backdrop" id="authModal" role="dialog" aria-modal="true">
-    <div class="modal-card auth-modal-card">
-      <button type="button" class="modal-close-icon" onclick="closeAuthModal()" aria-label="Close Modal">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <div class="auth-modal-header">
-        <div class="auth-icon-shield">
-          <i class="fas fa-shield-halved"></i>
-        </div>
-        <h3 class="modal-title" id="authModalTitle" data-i18n="authModalTitle">Student Portal &amp; Faculty Profiles</h3>
-        <p class="modal-text" id="authModalSubtitle" data-i18n="authModalSubtitle">
-          Sign in or register for your 3-Day Free Trial to view verified teacher credentials and access your student dashboard.
-        </p>
-      </div>
-
-      <!-- Privacy Notice Pill -->
-      <div class="auth-privacy-badge">
-        <i class="fas fa-lock"></i>
-        <span><strong>Islamic Privacy Notice:</strong> Full faculty profiles, Ijazah records, and personalized student tuition are protected for registered members.</span>
-      </div>
-
-      <!-- Auth Tabs -->
-      <div class="auth-tabs">
-        <button type="button" class="auth-tab-btn active" id="tabBtnSignIn" onclick="switchAuthTab('signin')">
-          <i class="fas fa-right-to-bracket"></i> Sign In
-        </button>
-        <button type="button" class="auth-tab-btn" id="tabBtnRegister" onclick="switchAuthTab('register')">
-          <i class="fas fa-user-plus"></i> New Student / Free Trial
-        </button>
-      </div>
-
-      <!-- Sign In Form -->
-      <form id="signInForm" class="auth-form" onsubmit="handleSignInSubmit(event)">
-        <div class="form-group">
-          <label for="loginIdentifier"><i class="fas fa-user"></i> Student Name or WhatsApp Number:</label>
-          <input type="text" id="loginIdentifier" class="form-input" placeholder="e.g. Ahmed Ali or +1234567890" required />
-        </div>
-        <button type="submit" class="btn btn-gold btn-block btn-lg">
-          <i class="fas fa-sign-in-alt"></i> Sign In to Portal
-        </button>
-      </form>
-
-      <!-- Quick Registration Form -->
-      <form id="quickRegisterForm" class="auth-form" style="display: none;" onsubmit="handleQuickRegisterSubmit(event)">
-        <div class="form-group">
-          <label for="regStudentName"><i class="fas fa-user"></i> Student / Parent Full Name *</label>
-          <input type="text" id="regStudentName" class="form-input" placeholder="e.g. Fatima Zahra" required />
-        </div>
-        <div class="form-row-2">
-          <div class="form-group">
-            <label for="regPhone"><i class="fab fa-whatsapp"></i> WhatsApp Number *</label>
-            <input type="tel" id="regPhone" class="form-input" placeholder="e.g. +44 7123 456789" required />
-          </div>
-          <div class="form-group">
-            <label for="regCourse"><i class="fas fa-book-open"></i> Desired Course *</label>
-            <select id="regCourse" class="form-select" required>
-              <option value="Noorani Qaida & Tajweed Basics">Noorani Qaida &amp; Tajweed</option>
-              <option value="Nazra Quran with Tajweed">Nazra Quran Recitation</option>
-              <option value="Hifz-ul-Quran (Memorization)">Hifz-ul-Quran (Memorization)</option>
-              <option value="Quran Translation & Tafseer">Quran Translation (Tarjuma &amp; Tafseer)</option>
-              <option value="Islamic Studies & Daily Duas">Islamic Studies for Kids</option>
-            </select>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-gold btn-block btn-lg">
-          <i class="fas fa-calendar-check"></i> Register &amp; Start 3-Day Trial
-        </button>
-      </form>
-
-      <!-- Quick Demo Access Options -->
-      <div class="auth-demo-divider">
-        <span>Instant Demo Access</span>
-      </div>
-      <div class="auth-demo-grid">
-        <button type="button" class="btn-demo-pill" onclick="loginDemoUser(1)">
-          <i class="fas fa-clock"></i> Demo Student (Day 1 Trial)
-        </button>
-        <button type="button" class="btn-demo-pill active-demo" onclick="loginDemoUser(3)">
-          <i class="fas fa-unlock"></i> Demo Student (Day 3 / Unlocked Prices)
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       19. Verified Faculty Profile & Credentials Modal
-       ========================================================================== -->
-  <div class="modal-backdrop" id="teacherProfileModal" role="dialog" aria-modal="true">
-    <div class="modal-card teacher-profile-modal-card">
-      <button type="button" class="modal-close-icon" onclick="closeTeacherProfileModal()" aria-label="Close Modal">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <div id="teacherProfileContent">
-        <!-- Dynamically injected via JavaScript -->
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       20. Student & Parent Dashboard Modal
-       ========================================================================== -->
-  <div class="modal-backdrop" id="studentDashboardModal" role="dialog" aria-modal="true">
-    <div class="modal-card dashboard-modal-card">
-      <div class="dashboard-modal-header">
-        <div class="dashboard-user-profile">
-          <div class="dashboard-avatar" id="dashAvatar">QA</div>
-          <div class="dashboard-user-details">
-            <div class="user-greeting-badge"><span>● Active Student Account</span></div>
-            <h3 id="dashStudentName">Ahmed Ali</h3>
-            <p id="dashCourseTeacher">Course: Noorani Qaida • Teacher: Male Instructor</p>
-          </div>
-        </div>
-
-        <div class="dashboard-header-actions">
-          <button type="button" class="btn btn-outline-white btn-sm" onclick="logoutUser()">
-            <i class="fas fa-sign-out-alt"></i> <span data-i18n="btnSignOut">Log Out</span>
-          </button>
-          <button type="button" class="modal-close-icon-relative" onclick="closeDashboardModal()" aria-label="Close Dashboard">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Trial Status & Progress Tracker -->
-      <div class="dashboard-trial-section">
-        <div class="trial-section-header">
-          <div>
-            <h4 data-i18n="trialStatusLabel">3-Day Free Trial Status:</h4>
-            <p id="dashTrialStatusDesc">Your 3-day evaluation trial is currently in progress.</p>
-          </div>
-          
-          <!-- Interactive Trial Day Simulator Switcher -->
-          <div class="trial-day-switcher">
-            <span class="switcher-label">Simulate Trial Progress:</span>
-            <div class="day-pills-group">
-              <button type="button" class="btn-day-pill" id="btnDay1" onclick="setTrialDay(1)">Day 1 (Start)</button>
-              <button type="button" class="btn-day-pill" id="btnDay2" onclick="setTrialDay(2)">Day 2 (Mid)</button>
-              <button type="button" class="btn-day-pill active" id="btnDay3" onclick="setTrialDay(3)">Day 3 (Unlocked 🎉)</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3-Day Steps Visual Bar -->
-        <div class="dashboard-steps-bar" id="dashStepsBar">
-          <!-- Populated by JavaScript -->
-        </div>
-      </div>
-
-      <!-- Conditional Course Pricing Section inside Dashboard -->
-      <div class="dashboard-pricing-section" id="dashPricingSection">
-        <!-- Rendered by JavaScript: Locked vs Unlocked View -->
       </div>
     </div>
   </div>
