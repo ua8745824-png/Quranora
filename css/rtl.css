@@ -102,3 +102,29 @@ body.urdu-mode .hero-cta-group {
 body.urdu-mode .currency-picker-box {
   flex-direction: row;
 }
+
+body.urdu-mode .modal-close-icon {
+  right: auto;
+  left: 1.2rem;
+}
+
+body.urdu-mode .trial-roadmap-arrow i {
+  transform: rotate(180deg);
+}
+
+body.urdu-mode .dashboard-modal-card,
+body.urdu-mode .auth-modal-card,
+body.urdu-mode .teacher-profile-modal-card {
+  text-align: right;
+}
+
+body.urdu-mode .auth-form .form-group {
+  text-align: right;
+}
+
+body.urdu-mode .teacher-metric-card i,
+body.urdu-mode .auth-privacy-badge i {
+  margin-left: 0.6rem;
+  margin-right: 0;
+}
+

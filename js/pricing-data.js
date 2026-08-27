@@ -131,5 +131,9 @@ const pricingData = {
         "تکمیلِ حفظ پر باضابطہ سند"
       ]
     }
+  },
+  isTrialPricingUnlocked: function(user) {
+    if (!user) return false;
+    return (user.trialDay && Number(user.trialDay) >= 3) || user.trialCompleted === true;
   }
 };
