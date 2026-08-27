@@ -314,10 +314,10 @@ const translations = {
     step4Desc: "اپنے مقررہ وقت پر live online classes شروع کریں۔",
 
     // Teachers Section
-    teachersHeading: "Meet Our Quran Teachers",
-    teachersSubheading: "ہمارے اساتذہ معروف اسلامی جامعات کے فارغ التحصیل اور تجوید کی اسناد کے حامل ہیں۔",
-    teachersNoticeMale: "Male teachers available for brothers and boys.",
-    teachersNoticeFemale: "Female teachers available for sisters and girls.",
+    teachersHeading: "ہمارے مستند اساتذہ کرام سے ملیں",
+    teachersSubheading: "ہمارے اساتذہ معروف اسلامی جامعات کے فارغ التحصیل، با سند قاری اور برسوں کے تدریسی تجربے کے حامل ہیں۔",
+    teachersNoticeMale: "👨‍🏫 بھائیوں اور بچوں کے لیے مستند مرد اساتذہ۔",
+    teachersNoticeFemale: "🧕 بہنوں اور بچیوں کے لیے مکمل پردہ دار اور باحجاب معلمات۔",
     filterAllTeachers: "تمام اساتذہ",
     filterMaleTeachers: "مرد اساتذہ",
     filterFemaleTeachers: "خواتین معلمات",
@@ -325,7 +325,7 @@ const translations = {
     teacherLanguages: "زبانیں",
     teacherQualification: "تعلیمی قابلیت",
     btnListenRecitation: "تلاوت کا نمونہ سنیں",
-    btnBookWithTeacher: "Book Trial with Teacher",
+    btnBookWithTeacher: "استاد کے ساتھ کلاس منتخب کریں",
 
     // Free Trial Spotlight Banner
     spotlightHeading: "Start Your Quran Journey Today",

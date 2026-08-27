@@ -173,8 +173,8 @@ function renderTeachers() {
     const langs = isUr ? t.languagesUr : t.languagesEn;
     const bio = isUr ? t.bioUr : t.bioEn;
     const genderBadge = t.gender === "male" 
-      ? `<span class="teacher-gender male"><i class="fas fa-mars"></i> Male Instructor</span>` 
-      : `<span class="teacher-gender female"><i class="fas fa-venus"></i> Female Instructor</span>`;
+      ? `<span class="teacher-gender male"><i class="fas fa-mars"></i> ${isUr ? "مرد استاد" : "Male Instructor"}</span>` 
+      : `<span class="teacher-gender female"><i class="fas fa-venus"></i> ${isUr ? "خاتون معلمہ (باحجاب)" : "Female Instructor"}</span>`;
 
     return `
       <div class="teacher-card">
@@ -240,7 +240,7 @@ function renderTeachers() {
           ` : ''}
 
           <button class="btn btn-outline btn-block" onclick="selectTeacherForTrial('${t.gender}', '${name}')">
-            <i class="fas fa-user-check"></i> ${isUr ? "Book Trial with Teacher" : "Book Trial with Teacher"}
+            <i class="fas fa-user-check"></i> ${isUr ? "استاد کے ساتھ کلاس منتخب کریں" : "Book Trial with Teacher"}
           </button>
         </div>
       </div>

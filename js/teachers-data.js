@@ -93,6 +93,28 @@ const teachersData = [
     audioVerse: "تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ"
   },
   {
+    id: "qari-muhammad-usman",
+    gender: "male",
+    nameEn: "Qari Muhammad Usman",
+    nameUr: "القارئ محمد عثمان",
+    titleEn: "Hifz & Tajweed Specialist | Tarjuma & Tafseer Tutor",
+    titleUr: "ماہر حفظِ قرآن و تجوید و معلم ترجمہ و تفسیر",
+    image: "assets/images/qari_muhammad_usman.png",
+    experienceEn: "7+ Years in Hifz, Tajweed, Tarjuma & Tafseer",
+    experienceUr: "7 سال سے زائد تدریسِ حفظ، تجوید، ترجمہ و تفسیر کا تجربہ",
+    qualificationEn: "Hafiz-ul-Quran & Certified Qari (Tajweed & Tafseer Studies)",
+    qualificationUr: "حافظِ قرآن، مستند قاری و فاضل علومِ قرآنی و تفسیر",
+    languagesEn: "English, Urdu, Arabic",
+    languagesUr: "انگلش، اردو، عربی",
+    rating: 5.0,
+    reviewsCount: 168,
+    studentsTaught: "420+ Students Worldwide",
+    bioEn: "Experienced Quran teacher with 7 years of dedicated service conducting Hifz-ul-Quran classes. Highly proficient in Quranic phonetics (Tajweed) and deep Quran comprehension through Tarjuma (Translation) and Tafseer.",
+    bioUr: "گزشتہ 7 سال سے شعبہ حفظ القرآن سے وابستہ مستند استاد۔ درست مخارج و تجوید کے ساتھ حفظ کروانے، اور فہمِ قرآن کے لیے سلیس ترجمہ و تفسیر سکھانے میں خصوصی مہارت۔",
+    audioSampleText: "Surah Al-Baqarah (Hifz & Tajweed)",
+    audioVerse: "الَّذِينَ آتَيْنَاهُمُ الْكِتَابَ يَتْلُونَهُ حَقَّ تِلَاوَتِهِ"
+  },
+  {
     id: "ustadha-maryam",
     gender: "female",
     nameEn: "Ustadha Maryam Fatima",
