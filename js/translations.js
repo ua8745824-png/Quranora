@@ -412,7 +412,7 @@ const translations = {
     contactHeading: "Get in Touch",
     contactSubheading: "کسی بھی سوال یا رہنمائی کے لیے ہماری ٹیم 24 گھنٹے دستیاب ہے۔",
     contactWhatsAppText: "WhatsApp Us",
-    contactEmailText: "usmanqube@gmail.com",
+    contactEmailText: "syedumarali37406@gmail.com",
     contactSupportText: "24/7 اکیڈمی سپورٹ",
     contactAvailability: "انگلش اور اردو میں رہنمائی",
     btnChatWhatsApp: "WhatsApp Us",

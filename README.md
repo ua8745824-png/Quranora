@@ -55,8 +55,8 @@ Quranora is a premier, modern, trustworthy Online Quran Academy serving students
 
 ## 📞 Contact Information
 
-- **WhatsApp:** [+92 316 5691212](https://wa.me/923165691212)
-- **Email:** [usmanqube@gmail.com](mailto:usmanqube@gmail.com)
+- **WhatsApp / Phone:** [+92 329 5056701](https://wa.me/923295056701)
+- **Email:** [syedumarali37406@gmail.com](mailto:syedumarali37406@gmail.com)
 - **Official YouTube Channels:**
   - [Al-Qari Syed Umar Ali (@qarisyedumaraliofficial)](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW)
   - [Al-Qari Mueez ur Rehman (@alqarimueezurrehman)](https://youtube.com/@alqarimueezurrehman?si=OWMnUcMmC2T-0KlJ)

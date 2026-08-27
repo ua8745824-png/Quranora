@@ -2,14 +2,16 @@
  * Quranora - Admission & Free Trial Form Handling
  */
 
-// Academy WhatsApp Support Number (Configurable)
-const ACADEMY_WHATSAPP_NUMBER = "923165691212"; // +92 316 5691212
+// Academy Official Contacts
+const ACADEMY_WHATSAPP_NUMBER = "923295056701"; // +92 329 5056701
+const ACADEMY_EMAIL = "syedumarali37406@gmail.com";
 
 document.addEventListener("DOMContentLoaded", () => {
   const trialForm = document.getElementById("trialAdmissionForm");
   const modal = document.getElementById("successModal");
   const modalCloseBtn = document.getElementById("modalCloseBtn");
   const modalWhatsappLink = document.getElementById("modalWhatsappLink");
+  const modalEmailLink = document.getElementById("modalEmailLink");
   const modalSummary = document.getElementById("modalSummary");
 
   if (trialForm) {
@@ -33,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Generate structured WhatsApp message
-      const whatsappText = `🌟 *New Free Trial Registration - Quranora Academy* 🌟
+      // 1. Structured WhatsApp message
+      const whatsappText = `🌟 *New Free Demo Class Registration - Quranora Academy* 🌟
 ----------------------------------
 👤 *Student Name:* ${studentName}
 🎂 *Age:* ${age}
@@ -52,13 +54,35 @@ _Registered via Quranora.com official portal_`;
       const encodedMsg = encodeURIComponent(whatsappText);
       const whatsappUrl = `https://wa.me/${ACADEMY_WHATSAPP_NUMBER}?text=${encodedMsg}`;
 
+      // 2. Structured Email (for European / International non-WhatsApp users)
+      const emailSubject = `New Demo Class Booking - ${studentName} (${course})`;
+      const emailBody = `Assalam-o-Alaikum Quranora Academy,
+
+A new student has registered for a Free Demo Class:
+
+Student Name: ${studentName}
+Age: ${age}
+Country / Location: ${country}
+Phone / WhatsApp: ${phone}
+Student Email: ${email}
+Course: ${course}
+Teacher Preference: ${teacherPref}
+Preferred Schedule: ${days} @ ${timeSlot}
+Special Notes: ${message}
+
+Submitted via Quranora.com`;
+
+      const mailtoUrl = `mailto:${ACADEMY_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
       // Update Modal content
       if (modalSummary) {
         modalSummary.innerHTML = `
           <div class="modal-summary-card">
             <p><strong>Student:</strong> ${studentName} (${age})</p>
             <p><strong>Course:</strong> ${course}</p>
-            <p><strong>Country:</strong> ${country}</p>
+            <p><strong>Location:</strong> ${country}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Email:</strong> ${email}</p>
             <p><strong>Teacher Preference:</strong> ${teacherPref}</p>
             <p><strong>Preferred Timing:</strong> ${days} @ ${timeSlot}</p>
           </div>
@@ -68,6 +92,10 @@ _Registered via Quranora.com official portal_`;
       if (modalWhatsappLink) {
         modalWhatsappLink.href = whatsappUrl;
         modalWhatsappLink.setAttribute("target", "_blank");
+      }
+
+      if (modalEmailLink) {
+        modalEmailLink.href = mailtoUrl;
       }
 
       // Show success modal

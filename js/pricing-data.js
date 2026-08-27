@@ -26,13 +26,13 @@ const pricingData = {
       classesPerMonthUr: "ماہانہ 12 لائیو کلاسز",
       recommended: false,
       rates: {
-        USD: 35,
-        GBP: 28,
-        CAD: 45,
-        AUD: 50,
-        AED: 130,
-        EUR: 32,
-        PKR: 4500
+        USD: 80,
+        GBP: 65,
+        CAD: 105,
+        AUD: 120,
+        AED: 295,
+        EUR: 75,
+        PKR: 12000
       },
       featuresEn: [
         "1-on-1 Private Live Session",
@@ -65,13 +65,13 @@ const pricingData = {
       classesPerMonthUr: "ماہانہ 20 لائیو کلاسز",
       recommended: true,
       rates: {
-        USD: 50,
-        GBP: 40,
-        CAD: 65,
-        AUD: 75,
-        AED: 185,
-        EUR: 45,
-        PKR: 6500
+        USD: 120,
+        GBP: 95,
+        CAD: 160,
+        AUD: 180,
+        AED: 440,
+        EUR: 110,
+        PKR: 18000
       },
       featuresEn: [
         "1-on-1 Dedicated Session",
@@ -106,13 +106,13 @@ const pricingData = {
       classesPerMonthUr: "ماہانہ 24 تا 26 کلاسز",
       recommended: false,
       rates: {
-        USD: 85,
-        GBP: 68,
-        CAD: 110,
-        AUD: 125,
-        AED: 310,
-        EUR: 78,
-        PKR: 11000
+        USD: 180,
+        GBP: 145,
+        CAD: 240,
+        AUD: 270,
+        AED: 660,
+        EUR: 165,
+        PKR: 28000
       },
       featuresEn: [
         "Full-time Hifz or Advanced Tajweed",
