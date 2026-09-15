@@ -29,8 +29,8 @@ const translations = {
     heroStat1Label: "Students Worldwide",
     heroStat2: "100%",
     heroStat2Label: "Certified Tutors",
-    heroStat3: "4.9/5",
-    heroStat3Label: "Parent Rating",
+    heroStat3: "3-Day",
+    heroStat3Label: "Free Trial Class",
     heroStat4: "1-on-1",
     heroStat4Label: "Private Sessions",
     
@@ -246,8 +246,8 @@ const translations = {
     heroStat1Label: "دنیا بھر کے طلبہ",
     heroStat2: "100%",
     heroStat2Label: "سند یافتہ اساتذہ",
-    heroStat3: "4.9/5",
-    heroStat3Label: "والدین کا اطمینان",
+    heroStat3: "3 دن",
+    heroStat3Label: "مفت ٹرائل کلاسز",
     heroStat4: "1-on-1",
     heroStat4Label: "انفرادی کلاسز",
     

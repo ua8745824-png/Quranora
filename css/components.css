@@ -866,17 +866,23 @@
   flex-grow: 1;
 }
 
-.teacher-rating {
+.teacher-verified-badge-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.8rem;
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  margin-bottom: 0.75rem;
 }
 
-.teacher-rating .stars {
-  color: #f59e0b;
+.teacher-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #855f10;
+  background: rgba(207, 168, 74, 0.14);
+  border: 1px solid rgba(207, 168, 74, 0.4);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
 }
 
 .teacher-name {

@@ -183,15 +183,10 @@ function renderTeachers() {
           ${genderBadge}
         </div>
         <div class="teacher-info">
-          <div class="teacher-rating">
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <span><strong>${t.rating}</strong> (${t.reviewsCount} reviews)</span>
+          <div class="teacher-verified-badge-row">
+            <span class="teacher-verified-badge">
+              <i class="fas fa-certificate"></i> ${isUr ? "مستند با سند اتالیق" : "Certified Quran Instructor"}
+            </span>
           </div>
 
           <h3 class="teacher-name">${name}</h3>
