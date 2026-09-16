@@ -20,7 +20,7 @@ Quranora is a premier, modern, trustworthy Online Quran Academy serving students
   6. **Islamic Studies for Kids** (Duas, Hadith, Seerah & Akhlaq)
   7. **Namaz Course** (Sunnah method of Salah, Wudu & Adhkar)
 - 👨‍🏫 **Certified Faculty & Recitation Player:** Male and female tutors featuring **Al-Qari Syed Umar Ali**, **Al-Qari Mueez ur Rehman**, **Maulana Syed Ammar Hussain Shah**, and **Qari Hasnain Muavia** with live audio previews.
-- 🎬 **Soulful Tilawat Section:** Direct integration with official YouTube channels: [@qarisyedumaraliofficial](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW) and [@alqarimueezurrehman](https://youtube.com/@alqarimueezurrehman?si=OWMnUcMmC2T-0KlJ).
+- 🎬 **Soulful Tilawat Section:** Direct integration with official YouTube channel: [@qarisyedumaraliofficial](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW).
 - 💱 **Multi-Currency Pricing Calculator:** Live rates for USD ($), GBP (£), CAD ($), AUD ($), AED (د.إ), EUR (€), and PKR (₨) with a 10% Sibling/Family discount calculator.
 - 📱 **1-Click WhatsApp Trial Booking:** Form validation and automated WhatsApp message generation.
 - 🚀 **100% Mobile Responsive:** Optimized for phones, tablets, and desktops with sticky quick actions.
@@ -57,9 +57,8 @@ Quranora is a premier, modern, trustworthy Online Quran Academy serving students
 
 - **WhatsApp / Phone:** [+92 329 5056701](https://wa.me/923295056701)
 - **Email:** [syedumarali37406@gmail.com](mailto:syedumarali37406@gmail.com)
-- **Official YouTube Channels:**
+- **Official YouTube Channel:**
   - [Al-Qari Syed Umar Ali (@qarisyedumaraliofficial)](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW)
-  - [Al-Qari Mueez ur Rehman (@alqarimueezurrehman)](https://youtube.com/@alqarimueezurrehman?si=OWMnUcMmC2T-0KlJ)
 
 ---
 

@@ -38,10 +38,9 @@ const teachersData = [
     languagesEn: "English, Urdu, Arabic",
     languagesUr: "انگلش، اردو، عربی",
     studentsTaught: "580+ Students Worldwide",
-    youtubeUrl: "https://youtube.com/@alqarimueezurrehman?si=OWMnUcMmC2T-0KlJ",
     bioEn: "Distinguished Qari celebrated for melodic Tilawat in the classical tradition. Specializes in advanced Tajweed rules, Maqamat, and beautiful Quran recitation.",
     bioUr: "خوش الحان قاری جن کی مسحور کن تلاوت اور اندازِ بیاں کو خاص پذیرائی حاصل ہے۔ تجوید، تلفظ اور مخارج کے بہترین اتالیق۔",
-    audioSampleText: "Listen to Official Tilawat on YouTube",
+    audioSampleText: "Surah Al-Alaq (Tajweed & Qira'at Recitation)",
     audioVerse: "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ"
   },
   {
