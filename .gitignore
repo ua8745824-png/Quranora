@@ -10,10 +10,3 @@ Thumbs.db
 .vscode/
 .idea/
 *.log
-
-# Database and environment
-*.db
-*.db-journal
-*.db-shm
-*.db-wal
-.env
