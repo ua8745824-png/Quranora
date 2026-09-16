@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Portal | Quranora Academy</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/portal-assets/css/portal.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="portal-sidebar" id="portalSidebar">
+      <div class="sidebar-brand">
+        <div class="brand-emblem">
+          <i class="fas fa-book-quran"></i>
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">Quran<span>ora</span></span>
+          <span class="brand-tag">PARENT PORTAL</span>
+        </div>
+      </div>
+
+      <div class="sidebar-user-badge">
+        <img id="parentAvatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" class="user-avatar-mini" alt="Parent" />
+        <div class="user-badge-info">
+          <div class="user-badge-name" id="parentNameDisplay">Fatima Khan</div>
+          <div class="user-badge-role">PARENT / GUARDIAN</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="nav-section-title">FAMILY MONITORING</div>
+        <a class="nav-item active" data-module="dashboard">
+          <i class="fas fa-home"></i> Family Overview
+        </a>
+        <a class="nav-item" data-module="timetable">
+          <i class="fas fa-calendar-alt"></i> Family Timetable
+        </a>
+        <a class="nav-item" data-module="progress">
+          <i class="fas fa-quran"></i> Children Quran Progress
+        </a>
+        <a class="nav-item" data-module="attendance">
+          <i class="fas fa-clipboard-check"></i> Attendance Record
+        </a>
+        <a class="nav-item" data-module="homework">
+          <i class="fas fa-tasks"></i> Homework Review
+        </a>
+        <a class="nav-item" data-module="fees">
+          <i class="fas fa-file-invoice-dollar"></i> Family Invoices & Fees
+        </a>
+        <a class="nav-item" data-module="messages">
+          <i class="fas fa-comments"></i> Chat with Teachers
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="portal-main">
+      <header class="portal-topbar">
+        <div class="topbar-left">
+          <button class="mobile-toggle-btn" id="mobileSidebarToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="topbar-page-title" id="pageTitle">Parent Portal</div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Role Switcher -->
+          <div class="dropdown">
+            <button class="btn btn-outline btn-sm" onclick="toggleDropdown('roleDropdown')">
+              <i class="fas fa-exchange-alt"></i> Switch Role <i class="fas fa-chevron-down" style="font-size:0.7rem;"></i>
+            </button>
+            <div class="dropdown-menu" id="roleDropdown">
+              <div class="dropdown-item" onclick="quickRoleSwitch('superadmin')"><i class="fas fa-crown" style="color:var(--accent-gold);"></i> Super Admin</div>
+              <div class="dropdown-item" onclick="quickRoleSwitch('teacher-umar')"><i class="fas fa-chalkboard-teacher" style="color:var(--success-color);"></i> Teacher Umar</div>
+              <div class="dropdown-item" onclick="quickRoleSwitch('student-ahmed')"><i class="fas fa-user-graduate" style="color:#38bdf8;"></i> Student Ahmed</div>
+              <div class="dropdown-item" onclick="quickRoleSwitch('parent-fatima')"><i class="fas fa-users" style="color:#f472b6;"></i> Parent Fatima</div>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button class="topbar-action-btn" id="themeToggleBtn" onclick="UI.toggleTheme()" title="Toggle Theme">
+            <i class="fas fa-sun"></i>
+          </button>
+
+          <!-- Notifications -->
+          <div class="dropdown">
+            <button class="topbar-action-btn" onclick="toggleDropdown('notifDropdown')">
+              <i class="fas fa-bell"></i>
+              <span class="topbar-badge-dot" id="notifDot" style="display:none;"></span>
+            </button>
+            <div class="dropdown-menu" id="notifDropdown" style="width: 300px;">
+              <div style="padding: 0.75rem 1rem; font-weight:800; border-bottom:1px solid var(--border-color);">Notifications</div>
+              <div id="notifList" style="max-height: 250px; overflow-y:auto; padding:0.5rem;"></div>
+            </div>
+          </div>
+
+          <!-- Logout -->
+          <button class="btn btn-danger btn-sm" onclick="ApiClient.logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+      </header>
+
+      <div class="portal-content">
+        <!-- 1. DASHBOARD & MULTI-CHILD OVERVIEW -->
+        <section class="module-view active" id="module-dashboard">
+          <!-- Child Switcher Tab Bar -->
+          <div class="card" style="margin-bottom:1.5rem; background:linear-gradient(135deg, rgba(6,78,59,0.3), rgba(217,119,6,0.1)); border-color:rgba(217,119,6,0.3);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+              <div>
+                <span class="badge badge-active"><i class="fas fa-heart"></i> Multi-Child Family Management</span>
+                <h2 style="font-size:1.45rem; font-weight:800; color:var(--text-primary); margin-top:0.25rem;">
+                  Enrolled Children Overview
+                </h2>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">Select a child to view their progress and online classroom link</p>
+              </div>
+
+              <!-- Children Selector Tabs -->
+              <div id="childrenSelectorTabs" style="display:flex; gap:0.5rem; flex-wrap:wrap;"></div>
+            </div>
+          </div>
+
+          <!-- Active Child Detail Cards -->
+          <div id="activeChildContent">
+            <!-- Filled via JS -->
+          </div>
+        </section>
+
+        <!-- 2. FAMILY TIMETABLE -->
+        <section class="module-view" id="module-timetable">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Family Quran Classes Schedule</h3>
+                <p class="card-subtitle">Unified timetable of all online classes for your children</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Child Name</th>
+                    <th>Days</th>
+                    <th>Session Timing</th>
+                    <th>Course</th>
+                    <th>Teacher</th>
+                    <th>Join Online Class</th>
+                  </tr>
+                </thead>
+                <tbody id="familyClassesTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. CHILDREN QURAN PROGRESS -->
+        <section class="module-view" id="module-progress">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Quran Progress & Daily Lesson Logs</h3>
+                <p class="card-subtitle">Review recent Surahs, Tajweed ratings, and teacher notes for your child</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Child</th>
+                    <th>Surah & Verses</th>
+                    <th>Juz</th>
+                    <th>Tajweed Evaluation</th>
+                    <th>Stage</th>
+                    <th>Teacher Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="parentProgressTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. ATTENDANCE RECORD -->
+        <section class="module-view" id="module-attendance">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Family Attendance Oversight</h3>
+                <p class="card-subtitle">Punctuality and attendance records for all classes</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Child</th>
+                    <th>Teacher</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                  </tr>
+                </thead>
+                <tbody id="parentAttendanceTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. HOMEWORK REVIEW -->
+        <section class="module-view" id="module-homework">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Homework Assignments & Teacher Grades</h3>
+                <p class="card-subtitle">Supervise homework completion and teacher advice</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Assignment</th>
+                    <th>Child</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Grade & Teacher Feedback</th>
+                  </tr>
+                </thead>
+                <tbody id="parentHomeworkTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. FAMILY INVOICES & FEES -->
+        <section class="module-view" id="module-fees">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h3 class="card-title">Family Invoices & Tuition Statements</h3>
+                <p class="card-subtitle">Includes 10% Sibling/Family discount and payment receipts</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Invoice #</th>
+                    <th>Child</th>
+                    <th>Billing Month</th>
+                    <th>Gross Fee</th>
+                    <th>Sibling Discount</th>
+                    <th>Net Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="parentFeesTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. MESSAGES MODULE -->
+        <section class="module-view" id="module-messages">
+          <div class="chat-container">
+            <div class="chat-contacts-list">
+              <div style="padding:1rem; font-weight:800; border-bottom:1px solid var(--border-color);">
+                Teachers & Administration
+              </div>
+              <div id="parentContactsContainer"></div>
+            </div>
+            <div class="chat-thread-view">
+              <div class="chat-header">
+                <div style="font-weight:700;" id="parentChatContactName">Select a teacher or admin</div>
+              </div>
+              <div class="chat-messages-area" id="parentChatMessagesArea">
+                <div style="text-align:center; color:var(--text-muted); margin-top:2rem;">
+                  Select a contact on the left to send a direct message.
+                </div>
+              </div>
+              <div class="chat-input-bar">
+                <input type="text" id="parentChatInput" class="form-control" placeholder="Type your message..." onkeypress="handleParentChatKeyPress(event)" />
+                <button class="btn btn-gold" onclick="sendParentMessage()"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/portal-assets/js/core/api.js"></script>
+  <script src="/portal-assets/js/core/ui.js"></script>
+  <script src="/portal-assets/js/parent/parent-app.js"></script>
+</body>
+</html>

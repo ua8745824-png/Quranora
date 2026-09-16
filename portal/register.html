@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Online Registration | Quranora Academy</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="/portal-assets/css/portal.css" />
+
+  <style>
+    .register-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #0b2218, #050d09 70%);
+      padding: 2rem 1rem;
+      position: relative;
+    }
+
+    .register-card {
+      background: rgba(16, 28, 22, 0.9);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(217, 119, 6, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      max-width: 650px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), var(--shadow-gold);
+      position: relative;
+      z-index: 10;
+    }
+
+    .info-banner {
+      background: rgba(6, 78, 59, 0.25);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      color: #34d399;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body class="register-page">
+  <div class="register-card">
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <a href="/" class="auth-logo" title="Back to Quranora Home" style="display: inline-flex; align-items: center; gap: 0.75rem;">
+        <div class="brand-emblem">
+          <i class="fas fa-book-quran"></i>
+        </div>
+        <div class="brand-info" style="text-align: left;">
+          <span class="brand-title">Quran<span>ora</span></span>
+          <span class="brand-tag">ONLINE ACADEMY</span>
+        </div>
+      </a>
+      <h1 style="font-size: 1.45rem; font-weight: 800; margin-top: 0.5rem;">Student Admission Application</h1>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">Enroll for 1-on-1 Live Quran Classes with Certified Faculty</p>
+    </div>
+
+    <div class="info-banner">
+      <i class="fas fa-shield-alt" style="font-size: 1.2rem;"></i>
+      <div>
+        <strong>Admin Approval System:</strong> After submission, your application will enter <strong>PENDING</strong> review. Our academic director will review and assign your teacher within 24 hours.
+      </div>
+    </div>
+
+    <form id="registerForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="regName">Student Full Name *</label>
+          <input type="text" id="regName" class="form-control" placeholder="e.g. Bilal Arshad" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regAge">Student Age *</label>
+          <input type="number" id="regAge" class="form-control" placeholder="e.g. 11" min="4" max="80" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address (Login Username) *</label>
+          <input type="email" id="regEmail" class="form-control" placeholder="bilal.student@gmail.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Create Account Password *</label>
+          <input type="password" id="regPassword" class="form-control" placeholder="Minimum 6 characters" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="regPhone">WhatsApp / Contact Phone *</label>
+          <input type="tel" id="regPhone" class="form-control" placeholder="+1 212 555 0188" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regCountry">Country of Residence *</label>
+          <input type="text" id="regCountry" class="form-control" placeholder="e.g. United Kingdom, USA, Canada" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="regCourse">Desired Quran Course *</label>
+          <select id="regCourse" class="form-control" required>
+            <option value="nazra-quran">Nazra Quran (Noorani Qaida to Fluent Reading)</option>
+            <option value="quran-tajweed" selected>Quran with Tajweed (Makharij & Rules)</option>
+            <option value="hifz-quran">Hifz-ul-Quran (Structured Memorization)</option>
+            <option value="quran-translation">Quran Translation (Tarjuma & Vocabulary)</option>
+            <option value="tafseer-quran">Tafseer-ul-Quran (Deep Commentary)</option>
+            <option value="islamic-studies">Islamic Studies for Kids (Duas & Hadith)</option>
+            <option value="namaz-course">Namaz & Daily Duas Course</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regTimezone">Your Timezone *</label>
+          <select id="regTimezone" class="form-control">
+            <option value="Europe/London">Europe / London (GMT / BST)</option>
+            <option value="America/New_York">America / New York (EST)</option>
+            <option value="America/Chicago">America / Chicago (CST)</option>
+            <option value="America/Toronto">America / Toronto (EST)</option>
+            <option value="America/Los_Angeles">America / Los Angeles (PST)</option>
+            <option value="Asia/Dubai">Gulf / UAE (GST)</option>
+            <option value="Australia/Sydney">Australia / Sydney (AEST)</option>
+            <option value="Asia/Karachi">Pakistan (PKT)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regNotes">Special Notes or Teacher Preference (Optional)</label>
+        <textarea id="regNotes" class="form-control" rows="2" placeholder="e.g. Female teacher preferred for young sister, available after 5 PM..."></textarea>
+      </div>
+
+      <button type="submit" id="regSubmitBtn" class="btn btn-gold btn-block" style="width: 100%; margin-top: 1rem;">
+        <i class="fas fa-paper-plane"></i> Submit Registration Application
+      </button>
+    </form>
+
+    <div style="text-align: center; margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-secondary);">
+      Already have an account? <a href="/login" style="font-weight: 700; color: var(--accent-gold-light);">Sign In to Portal</a>
+    </div>
+  </div>
+
+  <!-- Registration Success Modal -->
+  <div class="modal-backdrop" id="regSuccessModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" style="color: #10b981;"><i class="fas fa-check-circle"></i> Application Submitted!</h3>
+        <button class="modal-close-btn" onclick="UI.closeModal('regSuccessModal')">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 2rem;">
+        <div style="font-size: 3rem; color: var(--accent-gold); margin-bottom: 1rem;">
+          <i class="fas fa-user-clock"></i>
+        </div>
+        <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Status: <span class="badge badge-pending">PENDING APPROVAL</span></h4>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+          JazakAllah Khair! Your registration has been received by <strong>Quranora Administration</strong>. 
+          An Admin will review your application, assign your certified teacher, and activate your account.
+        </p>
+        <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: left; font-size: 0.85rem;">
+          <p><strong>Next Steps:</strong></p>
+          <ul style="padding-left: 1.2rem; color: var(--text-muted); margin-top: 0.25rem;">
+            <li>Admin will approve your account.</li>
+            <li>You can log in at <a href="/login">/login</a> using your registered email.</li>
+            <li>Join your live 1-on-1 class directly from your student dashboard!</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content: center;">
+        <a href="/login" class="btn btn-gold"><i class="fas fa-sign-in-alt"></i> Go to Portal Login</a>
+        <a href="/" class="btn btn-outline"><i class="fas fa-home"></i> Back to Homepage</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/portal-assets/js/core/api.js"></script>
+  <script src="/portal-assets/js/core/ui.js"></script>
+  <script src="/portal-assets/js/auth/register.js"></script>
+</body>
+</html>
