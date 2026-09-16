@@ -20,6 +20,10 @@ const translations = {
     btnBookTrial: "Book Free Trial",
     btnWhatsApp: "WhatsApp Us",
     btnViewCourses: "View Courses",
+    themeDark: "Dark",
+    themeLight: "Light",
+    themeToggleToDark: "Switch to Dark Mode",
+    themeToggleToLight: "Switch to Light Mode",
     
     // Hero
     heroBadge: "✨ Trusted by 5,000+ Muslim Families Worldwide",
@@ -237,6 +241,10 @@ const translations = {
     btnBookTrial: "Book Free Trial",
     btnWhatsApp: "WhatsApp Us",
     btnViewCourses: "کورسز دیکھیں",
+    themeDark: "تاریک",
+    themeLight: "روشن",
+    themeToggleToDark: "ڈارک موڈ میں تبدیل کریں",
+    themeToggleToLight: "لائٹ موڈ میں تبدیل کریں",
     
     // Hero
     heroBadge: "✨ دنیا بھر کے 5,000+ مسلم خاندانوں کا قابلِ اعتماد ادارہ",

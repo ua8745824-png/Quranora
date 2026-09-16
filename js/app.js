@@ -6,6 +6,7 @@
 const appState = {
   currentLang: localStorage.getItem("quranora_lang") || "en",
   currentCurrency: localStorage.getItem("quranora_currency") || "USD",
+  currentTheme: localStorage.getItem("quranora_theme") || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"),
   currentCourseFilter: "all",
   currentTeacherFilter: "all",
   hasSiblingDiscount: false
@@ -13,6 +14,7 @@ const appState = {
 
 // Initialize Application on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
   initLanguage();
   initCurrencySelector();
   renderCourses();
@@ -24,6 +26,73 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollAnimations();
   initAudioPlayerDemo();
 });
+
+/* ==========================================================================
+   0. Theme Switcher (Light <-> Dark Mode)
+   ========================================================================== */
+function initTheme() {
+  const themeToggleBtn = document.getElementById("themeToggleBtn");
+  const themeMobileBtn = document.getElementById("themeMobileBtn");
+
+  applyTheme(appState.currentTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", toggleTheme);
+  }
+  if (themeMobileBtn) {
+    themeMobileBtn.addEventListener("click", toggleTheme);
+  }
+
+  // Listen for OS theme preference changes if user hasn't explicitly set preference
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem("quranora_theme")) {
+        appState.currentTheme = e.matches ? "dark" : "light";
+        applyTheme(appState.currentTheme);
+      }
+    });
+  }
+}
+
+function toggleTheme() {
+  appState.currentTheme = appState.currentTheme === "dark" ? "light" : "dark";
+  localStorage.setItem("quranora_theme", appState.currentTheme);
+  applyTheme(appState.currentTheme);
+}
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  const dict = translations[appState.currentLang] || translations.en;
+
+  document.documentElement.setAttribute("data-theme", theme);
+  if (isDark) {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+
+  // Update Desktop Header Theme Button
+  const themeToggleBtn = document.getElementById("themeToggleBtn");
+  if (themeToggleBtn) {
+    const iconClass = isDark ? "fas fa-sun" : "fas fa-moon";
+    const labelText = isDark ? (dict.themeLight || "Light") : (dict.themeDark || "Dark");
+    const tooltipText = isDark ? (dict.themeToggleToLight || "Switch to Light Mode") : (dict.themeToggleToDark || "Switch to Dark Mode");
+
+    themeToggleBtn.innerHTML = `<i class="${iconClass}"></i> <span class="theme-toggle-label">${labelText}</span>`;
+    themeToggleBtn.setAttribute("title", tooltipText);
+    themeToggleBtn.setAttribute("aria-label", tooltipText);
+  }
+
+  // Update Mobile Drawer Theme Button
+  const themeMobileBtn = document.getElementById("themeMobileBtn");
+  if (themeMobileBtn) {
+    const iconClass = isDark ? "fas fa-sun" : "fas fa-moon";
+    const fullText = isDark ? (dict.themeToggleToLight || "Switch to Light Mode") : (dict.themeToggleToDark || "Switch to Dark Mode");
+
+    themeMobileBtn.innerHTML = `<i class="${iconClass}"></i> <span>${fullText}</span>`;
+    themeMobileBtn.setAttribute("aria-label", fullText);
+  }
+}
 
 /* ==========================================================================
    1. Language Switcher (English <-> Urdu) & RTL Handling
@@ -69,6 +138,9 @@ function applyLanguage(lang) {
       ? `<span>English</span> <i class="fas fa-globe"></i>` 
       : `<span>اردو</span> <i class="fas fa-globe"></i>`;
   });
+
+  // Re-apply theme button labels in active language
+  applyTheme(appState.currentTheme);
 
   // Replace text for all data-i18n attributes
   const elements = document.querySelectorAll("[data-i18n]");
