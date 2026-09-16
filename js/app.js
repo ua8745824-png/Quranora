@@ -327,19 +327,26 @@ function renderTeachers() {
 }
 
 /* ==========================================================================
-   4. Audio Player Demo (Web Audio synthesized recitation preview)
+   4. Audio Player Demo & Modal (Live Tilawat Video & Synthesized Preview)
    ========================================================================== */
 let activeAudioTimeout = null;
+
 function playAudioDemo(teacherId, text) {
+  const teacher = (typeof teachersData !== "undefined") ? teachersData.find(t => t.id === teacherId) : null;
   const icon = document.getElementById(`audio-icon-${teacherId}`);
-  if (!icon) return;
+  
+  if (icon) {
+    document.querySelectorAll(".btn-audio-play i").forEach(i => {
+      i.className = "fas fa-play";
+    });
+    icon.className = "fas fa-volume-up";
+  }
 
-  // Reset any other playing icons
-  document.querySelectorAll(".btn-audio-play i").forEach(i => {
-    i.className = "fas fa-play";
-  });
-
-  icon.className = "fas fa-spinner fa-spin";
+  // If teacher has a dedicated YouTube video/short (e.g. Al-Qari Syed Umar Ali)
+  if (teacher && teacher.youtubeEmbedId) {
+    openAudioVideoModal(teacher);
+    return;
+  }
 
   if (activeAudioTimeout) clearTimeout(activeAudioTimeout);
 
@@ -362,15 +369,80 @@ function playAudioDemo(teacherId, text) {
   }
 
   setTimeout(() => {
-    icon.className = "fas fa-volume-up";
-    activeAudioTimeout = setTimeout(() => {
-      icon.className = "fas fa-play";
-    }, 2500);
+    if (icon) {
+      icon.className = "fas fa-volume-up";
+      activeAudioTimeout = setTimeout(() => {
+        icon.className = "fas fa-play";
+      }, 2500);
+    }
   }, 300);
+}
+
+function openAudioVideoModal(teacher) {
+  const modal = document.getElementById("audioVideoModal");
+  const container = document.getElementById("audioPlayerContainer");
+  const titleEl = document.getElementById("audioModalTitle");
+  const linkEl = document.getElementById("audioModalYoutubeLink");
+  if (!modal || !container) return;
+
+  const isUr = appState.currentLang === "ur";
+  const name = isUr ? teacher.nameUr : teacher.nameEn;
+  const videoId = teacher.youtubeEmbedId || "raPyIsFXZ2Q";
+
+  if (titleEl) {
+    titleEl.innerHTML = `<i class="fas fa-volume-high" style="color: var(--accent-gold);"></i> ${name} — ${isUr ? "تلاوت آڈیو / ویڈیو" : "Tilawat Audio Preview"}`;
+  }
+
+  if (linkEl) {
+    linkEl.href = teacher.youtubeUrl || `https://youtube.com/shorts/${videoId}`;
+  }
+
+  container.innerHTML = `
+    <iframe 
+      src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" 
+      title="${name} Tilawat Recitation" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen
+      style="width: 100%; height: 100%; border: none;">
+    </iframe>
+  `;
+
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeAudioVideoModal() {
+  const modal = document.getElementById("audioVideoModal");
+  const container = document.getElementById("audioPlayerContainer");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+  if (container) {
+    container.innerHTML = ""; // Stop video/audio playback immediately on close
+  }
+  document.querySelectorAll(".btn-audio-play i").forEach(i => {
+    i.className = "fas fa-play";
+  });
 }
 
 function initAudioPlayerDemo() {
   window.playAudioDemo = playAudioDemo;
+  window.openAudioVideoModal = openAudioVideoModal;
+  window.closeAudioVideoModal = closeAudioVideoModal;
+
+  const closeBtn = document.getElementById("audioModalCloseBtn");
+  const doneBtn = document.getElementById("audioModalDoneBtn");
+  const modal = document.getElementById("audioVideoModal");
+
+  if (closeBtn) closeBtn.addEventListener("click", closeAudioVideoModal);
+  if (doneBtn) doneBtn.addEventListener("click", closeAudioVideoModal);
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeAudioVideoModal();
+    });
+  }
 }
 
 /* ==========================================================================

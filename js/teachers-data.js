@@ -17,10 +17,12 @@ const teachersData = [
     languagesEn: "English, Urdu, Arabic",
     languagesUr: "انگلش، اردو، عربی",
     studentsTaught: "700+ Students Worldwide",
-    youtubeUrl: "https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW",
+    youtubeUrl: "https://youtube.com/shorts/raPyIsFXZ2Q?si=EGqbkvAXAuSLfOUq",
+    youtubeEmbedId: "raPyIsFXZ2Q",
+    channelUrl: "https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW",
     bioEn: "Renowned Qari known for soul-stirring Tilawat and deep phonetics mastery. Trains students in accurate Makharij, breath control, and melodious recitation.",
     bioUr: "خوش الحان قاری اور مستند استاد جن کی تلاوت قرآن کے دلنشین انداز کو دنیا بھر میں پسند کیا جاتا ہے۔ تجوید اور مخارج کے بہترین ماہر۔",
-    audioSampleText: "Listen to Official Tilawat on YouTube",
+    audioSampleText: "Soulful Tilawat Short (Al-Qari Syed Umar Ali)",
     audioVerse: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ"
   },
   {
