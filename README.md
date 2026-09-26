@@ -20,7 +20,7 @@ Quran Wal Klaam is a premier, modern, trustworthy Online Quran Academy serving s
   6. **Islamic Studies for Kids** (Duas, Hadith, Seerah & Akhlaq)
   7. **Namaz Course** (Sunnah method of Salah, Wudu & Adhkar)
 - 👨‍🏫 **Certified Faculty & Recitation Player:** Male and female tutors featuring **Al-Qari Syed Umar Ali**, **Al-Qari Mueez ur Rehman**, **Maulana Syed Ammar Hussain Shah**, and **Qari Hasnain Muavia** with live audio previews.
-- 🎬 **Soulful Tilawat Section:** Direct integration with official YouTube channel: [@qarisyedumaraliofficial](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW).
+- 🎬 **Soulful Tilawat Section:** Direct integration with official YouTube channel: [@quranwalklaam](https://youtube.com/@quranwalklaam).
 - 💱 **Multi-Currency Pricing Calculator:** Live rates for USD ($), GBP (£), CAD ($), AUD ($), AED (د.إ), EUR (€), and PKR (₨) with a 10% Sibling/Family discount calculator.
 - 📱 **1-Click WhatsApp Trial Booking:** Form validation and automated WhatsApp message generation.
 - 🚀 **100% Mobile Responsive:** Optimized for phones, tablets, and desktops with sticky quick actions.
@@ -60,7 +60,7 @@ Quran Wal Klaam is a premier, modern, trustworthy Online Quran Academy serving s
 - **Facebook:** [Quran Wal Klaam on Facebook](https://www.facebook.com/share/1Y1B31d36E/)
 - **Instagram:** [@umar_shah333](https://www.instagram.com/umar_shah333?stkn=azR2NnBsYzB3Z3cz)
 - **TikTok:** [@quranwalklaam](https://www.tiktok.com/@quranwalklaam?_r=1&_t=ZS-9A3dbvwd2Kj)
-- **YouTube:** [Al-Qari Syed Umar Ali (@qarisyedumaraliofficial)](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW)
+- **YouTube:** [Quran Wal Klaam (@quranwalklaam)](https://youtube.com/@quranwalklaam)
 
 ---
 

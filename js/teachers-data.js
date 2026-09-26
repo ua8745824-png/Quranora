@@ -19,7 +19,7 @@ const teachersData = [
     studentsTaught: "700+ Students Worldwide",
     youtubeUrl: "https://youtube.com/shorts/raPyIsFXZ2Q?si=EGqbkvAXAuSLfOUq",
     youtubeEmbedId: "raPyIsFXZ2Q",
-    channelUrl: "https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW",
+    channelUrl: "https://youtube.com/@quranwalklaam",
     bioEn: "Renowned Qari known for soul-stirring Tilawat and deep phonetics mastery. Trains students in accurate Makharij, breath control, and melodious recitation.",
     bioUr: "خوش الحان قاری اور مستند استاد جن کی تلاوت قرآن کے دلنشین انداز کو دنیا بھر میں پسند کیا جاتا ہے۔ تجوید اور مخارج کے بہترین ماہر۔",
     audioSampleText: "Soulful Tilawat Short (Al-Qari Syed Umar Ali)",
