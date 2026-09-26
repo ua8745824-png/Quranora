@@ -10,7 +10,15 @@ Quran Wal Klaam is a premier, modern, trustworthy Online Quran Academy serving s
 ## 📖 Key Features
 
 - 🌿 **Islamic & Modern Aesthetics:** Deep Emerald Green (`#043927`), Warm Gold accents (`#CFA84A`), and crisp Ivory backgrounds (`#FCFCFB`).
-- 🌐 **Bilingual Support (English ↔ اردو):** Real-time language switching with complete RTL support and Noto Nastaliq Urdu typography.
+- 🌐 **Multilingual Support (8 Major Languages):** Real-time switching with full LTR/RTL support, Arabic typography (Amiri), and Urdu typography (Noto Nastaliq Urdu) for:
+  - 🇬🇧 English (`en`)
+  - 🇵🇰 Urdu (`ur`)
+  - 🇸🇦 Arabic (`ar`)
+  - 🇫🇷 French (`fr`)
+  - 🇩🇪 German (`de`)
+  - 🇪🇸 Spanish (`es`)
+  - 🇹🇷 Turkish (`tr`)
+  - 🇮🇩 Indonesian (`id`)
 - 📚 **7 Comprehensive Courses:**
   1. **Nazra Quran** (Noorani Qaida & fluent reading)
   2. **Quran with Tajweed** (Makharij & articulation rules)

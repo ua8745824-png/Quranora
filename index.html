@@ -93,10 +93,80 @@
           <span class="theme-toggle-label" data-i18n="themeDark">Dark</span>
         </button>
 
-        <!-- Language Switcher Button -->
-        <button class="lang-toggle-btn" id="langToggleBtn" aria-label="Switch Language">
-          <span>اردو</span> <i class="fas fa-globe"></i>
-        </button>
+        <!-- Language Switcher Dropdown -->
+        <div class="lang-dropdown-wrapper" id="langDropdownWrapper">
+          <button class="lang-dropdown-btn" id="langDropdownBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Select Language">
+            <span class="lang-current-flag" id="langCurrentFlag">🇬🇧</span>
+            <span class="lang-current-name" id="langCurrentName">EN</span>
+            <i class="fas fa-chevron-down lang-chevron"></i>
+          </button>
+          <div class="lang-dropdown-menu" id="langDropdownMenu" role="listbox" aria-label="Language options">
+            <button class="lang-option-btn active" data-lang="en" role="option" aria-selected="true" type="button">
+              <span class="lang-opt-flag">🇬🇧</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native">English</span>
+                <span class="lang-opt-en">English</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="ur" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇵🇰</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native font-nastaliq">اردو</span>
+                <span class="lang-opt-en">Urdu</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="ar" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇸🇦</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native font-arabic">العربية</span>
+                <span class="lang-opt-en">Arabic</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="fr" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇫🇷</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native">Français</span>
+                <span class="lang-opt-en">French</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="de" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇩🇪</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native">Deutsch</span>
+                <span class="lang-opt-en">German</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="es" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇪🇸</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native">Español</span>
+                <span class="lang-opt-en">Spanish</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="tr" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇹🇷</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native">Türkçe</span>
+                <span class="lang-opt-en">Turkish</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+            <button class="lang-option-btn" data-lang="id" role="option" aria-selected="false" type="button">
+              <span class="lang-opt-flag">🇮🇩</span>
+              <div class="lang-opt-labels">
+                <span class="lang-opt-native">Bahasa Indonesia</span>
+                <span class="lang-opt-en">Indonesian</span>
+              </div>
+              <i class="fas fa-check lang-opt-check"></i>
+            </button>
+          </div>
+        </div>
 
         <!-- WhatsApp Quick Link -->
         <a href="https://wa.me/923295056701?text=Assalam-o-Alaikum!%20I%20am%20interested%20in%20Quran%20Wal%20Klaam%20Online%20Quran%20Classes." target="_blank" rel="noopener" class="btn-header-wa" title="Chat on WhatsApp" aria-label="WhatsApp Us">
@@ -146,11 +216,23 @@
     </div>
 
     <div class="mobile-nav-footer">
+      <div class="mobile-lang-box">
+        <label for="mobileLangSelect" class="mobile-lang-label">
+          <i class="fas fa-globe"></i> <span data-i18n="langLabel">Language:</span>
+        </label>
+        <select id="mobileLangSelect" class="mobile-lang-select" aria-label="Select Language">
+          <option value="en">🇬🇧 English (English)</option>
+          <option value="ur">🇵🇰 اردو (Urdu)</option>
+          <option value="ar">🇸🇦 العربية (Arabic)</option>
+          <option value="fr">🇫🇷 Français (French)</option>
+          <option value="de">🇩🇪 Deutsch (German)</option>
+          <option value="es">🇪🇸 Español (Spanish)</option>
+          <option value="tr">🇹🇷 Türkçe (Turkish)</option>
+          <option value="id">🇮🇩 Bahasa Indonesia (Indonesian)</option>
+        </select>
+      </div>
       <button class="theme-toggle-btn btn-block" id="themeMobileBtn" aria-label="Toggle dark / light mode">
         <i class="fas fa-moon"></i> <span data-i18n="themeToggleToDark">Switch to Dark Mode</span>
-      </button>
-      <button class="lang-toggle-btn btn-block" id="langMobileBtn">
-        <span>اردو زبان میں دیکھیں</span> <i class="fas fa-globe"></i>
       </button>
       <a href="#free-trial" class="btn btn-gold btn-block" data-i18n="btnBookTrial">
         <i class="fas fa-calendar-check"></i> Book Free Trial

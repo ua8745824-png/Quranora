@@ -95,49 +95,118 @@ function applyTheme(theme) {
 }
 
 /* ==========================================================================
-   1. Language Switcher (English <-> Urdu) & RTL Handling
+   1. Language Switcher (8 Supported Languages) & RTL Handling
    ========================================================================== */
+const supportedLanguages = {
+  en: { code: "en", flag: "🇬🇧", name: "EN", native: "English", english: "English", dir: "ltr" },
+  ur: { code: "ur", flag: "🇵🇰", name: "اردو", native: "اردو", english: "Urdu", dir: "rtl" },
+  ar: { code: "ar", flag: "🇸🇦", name: "عربي", native: "العربية", english: "Arabic", dir: "rtl" },
+  fr: { code: "fr", flag: "🇫🇷", name: "FR", native: "Français", english: "French", dir: "ltr" },
+  de: { code: "de", flag: "🇩🇪", name: "DE", native: "Deutsch", english: "German", dir: "ltr" },
+  es: { code: "es", flag: "🇪🇸", name: "ES", native: "Español", english: "Spanish", dir: "ltr" },
+  tr: { code: "tr", flag: "🇹🇷", name: "TR", native: "Türkçe", english: "Turkish", dir: "ltr" },
+  id: { code: "id", flag: "🇮🇩", name: "ID", native: "Bahasa Indonesia", english: "Indonesian", dir: "ltr" }
+};
+
 function initLanguage() {
-  const langToggleBtn = document.getElementById("langToggleBtn");
-  const langMobileBtn = document.getElementById("langMobileBtn");
+  const dropdownWrapper = document.getElementById("langDropdownWrapper");
+  const dropdownBtn = document.getElementById("langDropdownBtn");
+  const optionButtons = document.querySelectorAll(".lang-option-btn");
+  const mobileLangSelect = document.getElementById("mobileLangSelect");
 
   applyLanguage(appState.currentLang);
 
-  if (langToggleBtn) {
-    langToggleBtn.addEventListener("click", toggleLanguage);
+  if (dropdownBtn && dropdownWrapper) {
+    dropdownBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownWrapper.classList.toggle("open");
+      dropdownBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
   }
-  if (langMobileBtn) {
-    langMobileBtn.addEventListener("click", toggleLanguage);
+
+  optionButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const lang = btn.getAttribute("data-lang");
+      if (lang && supportedLanguages[lang]) {
+        setLanguage(lang);
+      }
+      if (dropdownWrapper) {
+        dropdownWrapper.classList.remove("open");
+        if (dropdownBtn) dropdownBtn.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  if (mobileLangSelect) {
+    mobileLangSelect.addEventListener("change", (e) => {
+      const lang = e.target.value;
+      if (lang && supportedLanguages[lang]) {
+        setLanguage(lang);
+      }
+    });
   }
+
+  document.addEventListener("click", (e) => {
+    if (dropdownWrapper && !dropdownWrapper.contains(e.target)) {
+      dropdownWrapper.classList.remove("open");
+      if (dropdownBtn) dropdownBtn.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && dropdownWrapper && dropdownWrapper.classList.contains("open")) {
+      dropdownWrapper.classList.remove("open");
+      if (dropdownBtn) {
+        dropdownBtn.setAttribute("aria-expanded", "false");
+        dropdownBtn.focus();
+      }
+    }
+  });
 }
 
-function toggleLanguage() {
-  appState.currentLang = appState.currentLang === "en" ? "ur" : "en";
-  localStorage.setItem("quranwalklaam_lang", appState.currentLang);
-  applyLanguage(appState.currentLang);
+function setLanguage(lang) {
+  appState.currentLang = lang;
+  localStorage.setItem("quranwalklaam_lang", lang);
+  applyLanguage(lang);
   renderCourses();
   renderTeachers();
   renderPricing();
 }
 
 function applyLanguage(lang) {
+  const langConfig = supportedLanguages[lang] || supportedLanguages.en;
+  const isRtl = langConfig.dir === "rtl";
   const isUrdu = lang === "ur";
-  document.documentElement.lang = lang;
-  document.documentElement.dir = isUrdu ? "rtl" : "ltr";
-  
-  if (isUrdu) {
-    document.body.classList.add("urdu-mode");
-  } else {
-    document.body.classList.remove("urdu-mode");
-  }
+  const isArabic = lang === "ar";
 
-  // Update Toggle button label
-  const langButtons = document.querySelectorAll(".lang-toggle-btn");
-  langButtons.forEach(btn => {
-    btn.innerHTML = isUrdu 
-      ? `<span>English</span> <i class="fas fa-globe"></i>` 
-      : `<span>اردو</span> <i class="fas fa-globe"></i>`;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isRtl ? "rtl" : "ltr";
+
+  // Body layout and font classes
+  document.body.classList.toggle("rtl-mode", isRtl);
+  document.body.classList.toggle("urdu-mode", isUrdu);
+  document.body.classList.toggle("arabic-mode", isArabic);
+
+  // Update desktop dropdown button label & flag
+  const currentFlagEl = document.getElementById("langCurrentFlag");
+  const currentNameEl = document.getElementById("langCurrentName");
+  if (currentFlagEl) currentFlagEl.textContent = langConfig.flag;
+  if (currentNameEl) currentNameEl.textContent = langConfig.name;
+
+  // Update active option in dropdown menu
+  const optionButtons = document.querySelectorAll(".lang-option-btn");
+  optionButtons.forEach(btn => {
+    const isSelected = btn.getAttribute("data-lang") === lang;
+    btn.classList.toggle("active", isSelected);
+    btn.setAttribute("aria-selected", isSelected ? "true" : "false");
   });
+
+  // Update mobile dropdown select
+  const mobileLangSelect = document.getElementById("mobileLangSelect");
+  if (mobileLangSelect) {
+    mobileLangSelect.value = lang;
+  }
 
   // Re-apply theme button labels in active language
   applyTheme(appState.currentTheme);
@@ -170,6 +239,7 @@ function renderCourses() {
   const container = document.getElementById("coursesContainer");
   if (!container) return;
 
+  const dict = translations[appState.currentLang] || translations.en;
   const isUr = appState.currentLang === "ur";
   const filtered = coursesData.filter(course => {
     if (appState.currentCourseFilter === "all") return true;
@@ -183,7 +253,7 @@ function renderCourses() {
     const title = isUr ? course.titleUr : course.titleEn;
     const tagline = isUr ? course.taglineUr : course.taglineEn;
     const features = isUr ? course.featuresUr : course.featuresEn;
-    const btnText = isUr ? "Book Free Trial" : "Book Free Trial";
+    const btnText = dict.btnBookTrial || "Book Free Trial";
 
     return `
       <div class="course-card" data-category="${course.category}">
@@ -231,6 +301,7 @@ function renderTeachers() {
   const container = document.getElementById("teachersContainer");
   if (!container) return;
 
+  const dict = translations[appState.currentLang] || translations.en;
   const isUr = appState.currentLang === "ur";
   const filtered = teachersData.filter(t => {
     if (appState.currentTeacherFilter === "all") return true;
@@ -244,9 +315,16 @@ function renderTeachers() {
     const qual = isUr ? t.qualificationUr : t.qualificationEn;
     const langs = isUr ? t.languagesUr : t.languagesEn;
     const bio = isUr ? t.bioUr : t.bioEn;
+    const maleLabel = dict.filterMaleTeachers || (isUr ? "مرد استاد" : "Male Instructor");
+    const femaleLabel = dict.filterFemaleTeachers || (isUr ? "خاتون معلمہ (باحجاب)" : "Female Instructor");
     const genderBadge = t.gender === "male" 
-      ? `<span class="teacher-gender male"><i class="fas fa-mars"></i> ${isUr ? "مرد استاد" : "Male Instructor"}</span>` 
-      : `<span class="teacher-gender female"><i class="fas fa-venus"></i> ${isUr ? "خاتون معلمہ (باحجاب)" : "Female Instructor"}</span>`;
+      ? `<span class="teacher-gender male"><i class="fas fa-mars"></i> ${maleLabel}</span>` 
+      : `<span class="teacher-gender female"><i class="fas fa-venus"></i> ${femaleLabel}</span>`;
+    const certText = isUr ? "مستند با سند اتالیق" : "Certified Quran Instructor";
+    const qualLabel = dict.teacherQualification || (isUr ? "تعلیمی قابلیت" : "Qualification");
+    const expLabel = dict.teacherExp || (isUr ? "تدریسی تجربہ" : "Experience");
+    const langLabel = dict.teacherLanguages || (isUr ? "زبانیں" : "Languages");
+    const btnBookTeacher = dict.btnBookWithTeacher || (isUr ? "استاد کے ساتھ کلاس منتخب کریں" : "Book Trial with Teacher");
 
     return `
       <div class="teacher-card">
@@ -257,7 +335,7 @@ function renderTeachers() {
         <div class="teacher-info">
           <div class="teacher-verified-badge-row">
             <span class="teacher-verified-badge">
-              <i class="fas fa-certificate"></i> ${isUr ? "مستند با سند اتالیق" : "Certified Quran Instructor"}
+              <i class="fas fa-certificate"></i> ${certText}
             </span>
           </div>
 
@@ -269,21 +347,21 @@ function renderTeachers() {
             <div class="detail-item">
               <i class="fas fa-graduation-cap"></i>
               <div>
-                <small>${isUr ? "تعلیمی قابلیت" : "Qualification"}</small>
+                <small>${qualLabel}</small>
                 <p>${qual}</p>
               </div>
             </div>
             <div class="detail-item">
               <i class="fas fa-history"></i>
               <div>
-                <small>${isUr ? "تدریسی تجربہ" : "Experience"}</small>
+                <small>${expLabel}</small>
                 <p>${exp}</p>
               </div>
             </div>
             <div class="detail-item">
               <i class="fas fa-language"></i>
               <div>
-                <small>${isUr ? "زبانیں" : "Languages"}</small>
+                <small>${langLabel}</small>
                 <p>${langs}</p>
               </div>
             </div>
@@ -307,7 +385,7 @@ function renderTeachers() {
           ` : ''}
 
           <button class="btn btn-outline btn-block" onclick="selectTeacherForTrial('${t.gender}', '${name}')">
-            <i class="fas fa-user-check"></i> ${isUr ? "استاد کے ساتھ کلاس منتخب کریں" : "Book Trial with Teacher"}
+            <i class="fas fa-user-check"></i> ${btnBookTeacher}
           </button>
         </div>
       </div>
@@ -478,6 +556,7 @@ function renderPricing() {
   const container = document.getElementById("pricingContainer");
   if (!container) return;
 
+  const dict = translations[appState.currentLang] || translations.en;
   const isUr = appState.currentLang === "ur";
   const currCode = appState.currentCurrency;
   const currInfo = pricingData.currencies[currCode] || pricingData.currencies.USD;
@@ -492,17 +571,19 @@ function renderPricing() {
       baseRate = Math.round(baseRate * 0.9); // 10% discount
     }
 
-    const title = isUr ? plan.nameUr : plan.nameEn;
-    const subtitle = isUr ? plan.nameUr : (plan.id === "standard" ? "Most Popular for Kids & Tajweed" : (plan.id === "basic" ? "Best for steady progress & beginners" : "For fast-track Hifz & daily mastery"));
-    const days = isUr ? plan.daysPerWeekUr : plan.daysPerWeek;
+    const title = isUr ? plan.nameUr : (dict[`plan${plan.id.charAt(0).toUpperCase() + plan.id.slice(1)}Title`] || plan.nameEn);
+    const subtitle = isUr ? plan.nameUr : (dict[`plan${plan.id.charAt(0).toUpperCase() + plan.id.slice(1)}Subtitle`] || (plan.id === "standard" ? "Most Popular for Kids & Tajweed" : (plan.id === "basic" ? "Best for steady progress & beginners" : "For fast-track Hifz & daily mastery")));
+    const days = isUr ? plan.daysPerWeekUr : (dict[`plan${plan.id.charAt(0).toUpperCase() + plan.id.slice(1)}Days`] || plan.daysPerWeek);
     const duration = isUr ? plan.durationUr : plan.duration;
     const classesCount = isUr ? plan.classesPerMonthUr : plan.classesPerMonth;
     const features = isUr ? plan.featuresUr : plan.featuresEn;
-    const btnText = isUr ? "Book Free Trial" : "Book Free Trial";
+    const btnText = dict.btnSelectPlan || dict.btnBookTrial || "Book Free Trial";
+    const perMonthText = dict.perMonth || (isUr ? '/ ماہانہ' : '/ month');
+    const ribbonText = dict.planStandardBadge || (isUr ? 'سب سے زیادہ منتخب کردہ' : 'Most Recommended');
 
     return `
       <div class="pricing-card ${plan.recommended ? 'featured' : ''}">
-        ${plan.recommended ? `<div class="pricing-ribbon">${isUr ? 'سب سے زیادہ منتخب کردہ' : 'Most Recommended'}</div>` : ''}
+        ${plan.recommended ? `<div class="pricing-ribbon">${ribbonText}</div>` : ''}
         
         <div class="pricing-header">
           <h3 class="plan-name">${title}</h3>
@@ -514,7 +595,7 @@ function renderPricing() {
           <div class="price-amount-wrapper">
             <span class="currency-symbol">${currInfo.symbol}</span>
             <span class="price-number">${baseRate}</span>
-            <span class="price-period">${isUr ? '/ ماہانہ' : '/ month'}</span>
+            <span class="price-period">${perMonthText}</span>
           </div>
           ${hasDiscount ? `<div class="discount-applied"><del>${currInfo.symbol}${originalRate}</del> <span>10% Sibling OFF</span></div>` : ''}
           <div class="plan-sub-meta"><span>${duration}</span> • <span>${classesCount}</span></div>

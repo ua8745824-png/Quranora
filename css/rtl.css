@@ -1,11 +1,16 @@
 /* ==========================================================================
-   Quran Wal Klaam - RTL & Urdu Typography Stylesheet
+   Quran Wal Klaam - RTL & Arabic / Urdu Typography Stylesheet
    ========================================================================== */
 
-body.urdu-mode {
-  font-family: var(--font-urdu), var(--font-sans);
+/* Universal RTL Layout */
+body.rtl-mode {
   direction: rtl;
   text-align: right;
+}
+
+/* Urdu Mode Typography */
+body.urdu-mode {
+  font-family: var(--font-urdu), var(--font-sans);
 }
 
 body.urdu-mode h1,
@@ -19,86 +24,128 @@ body.urdu-mode .hero-title {
   letter-spacing: normal;
 }
 
-body.urdu-mode p,
-body.urdu-mode .section-subtitle,
-body.urdu-mode .hero-subtitle,
-body.urdu-mode .step-desc,
-body.urdu-mode .course-tagline {
-  line-height: 1.9;
-  font-size: 1.05rem;
+/* Arabic Mode Typography */
+body.arabic-mode {
+  font-family: var(--font-arabic), var(--font-sans);
 }
 
-/* Nav & Header RTL adjustments */
-body.urdu-mode .brand-logo {
-  flex-direction: row;
-}
-
-body.urdu-mode .logo-tagline {
+body.arabic-mode h1,
+body.arabic-mode h2,
+body.arabic-mode h3,
+body.arabic-mode h4,
+body.arabic-mode .section-title,
+body.arabic-mode .hero-title {
+  font-family: var(--font-arabic), var(--font-sans);
+  line-height: 1.6;
   letter-spacing: normal;
 }
 
-/* Course and Teacher Card adjustments */
-body.urdu-mode .course-features li,
-body.urdu-mode .pricing-features-list li,
-body.urdu-mode .spotlight-feat-item,
-body.urdu-mode .trust-item,
-body.urdu-mode .detail-item {
+/* General RTL Text Scaling */
+body.rtl-mode p,
+body.rtl-mode .section-subtitle,
+body.rtl-mode .hero-subtitle,
+body.rtl-mode .step-desc,
+body.rtl-mode .course-tagline {
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+/* Font Helper Classes for Selectors */
+.font-nastaliq {
+  font-family: var(--font-urdu), serif !important;
+}
+
+.font-arabic {
+  font-family: var(--font-arabic), serif !important;
+}
+
+/* Nav & Header RTL adjustments */
+body.rtl-mode .brand-logo {
+  flex-direction: row;
+}
+
+body.rtl-mode .logo-tagline {
+  letter-spacing: normal;
+}
+
+/* Dropdown Menu RTL Alignment */
+body.rtl-mode .lang-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+body.rtl-mode .lang-option-btn {
   text-align: right;
 }
 
-body.urdu-mode .course-features li i,
-body.urdu-mode .pricing-features-list li i {
+/* Course and Teacher Card adjustments */
+body.rtl-mode .course-features li,
+body.rtl-mode .pricing-features-list li,
+body.rtl-mode .spotlight-feat-item,
+body.rtl-mode .trust-item,
+body.rtl-mode .detail-item {
+  text-align: right;
+}
+
+body.rtl-mode .course-features li i,
+body.rtl-mode .pricing-features-list li i {
   margin-left: 0.65rem;
   margin-right: 0;
 }
 
-body.urdu-mode .teacher-gender {
+body.rtl-mode .teacher-gender {
   right: auto;
   left: 1rem;
 }
 
-body.urdu-mode .teacher-details-list .detail-item i {
+body.rtl-mode .teacher-details-list .detail-item i {
   margin-left: 0.65rem;
   margin-right: 0;
 }
 
-body.urdu-mode .modal-summary-card {
+body.rtl-mode .modal-summary-card {
   text-align: right;
 }
 
-body.urdu-mode .faq-question i {
+body.rtl-mode .faq-question i {
   margin-right: auto;
   margin-left: 0;
 }
 
-body.urdu-mode .footer-col h4::after {
+body.rtl-mode .footer-col h4::after {
   left: auto;
   right: 0;
 }
 
-body.urdu-mode .footer-link:hover {
+body.rtl-mode .footer-link:hover {
   transform: translateX(-3px);
 }
 
-body.urdu-mode .floating-whatsapp-btn {
+body.rtl-mode .floating-whatsapp-btn {
   right: auto;
   left: 25px;
 }
 
-body.urdu-mode .back-to-top {
+body.rtl-mode .back-to-top {
   right: auto;
   left: 32px;
 }
 
-body.urdu-mode .hero-floating-card {
+body.rtl-mode .hero-floating-card {
   left: auto;
   right: -20px;
 }
 
-body.urdu-mode .hero-cta-group {
+body.rtl-mode .hero-cta-group {
   justify-content: flex-start;
 }
 
-body.urdu-mode .currency-picker-box {
+body.rtl-mode .currency-picker-box {
   flex-direction: row;
+}
+
+body.rtl-mode .mobile-nav-link i {
+  margin-right: auto;
+  margin-left: 0;
+  transform: rotate(180deg);
 }
