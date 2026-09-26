@@ -1,5 +1,5 @@
 /**
- * Quranora - Global Multi-Currency Pricing Dataset
+ * Quran Wal Klaam - Global Multi-Currency Pricing Dataset
  */
 const pricingData = {
   currencies: {

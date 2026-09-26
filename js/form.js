@@ -1,5 +1,5 @@
 /**
- * Quranora - Admission & Free Trial Form Handling
+ * Quran Wal Klaam - Admission & Free Trial Form Handling
  */
 
 // Academy Official Contacts
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // 1. Structured WhatsApp message
-      const whatsappText = `🌟 *New Free Demo Class Registration - Quranora Academy* 🌟
+      const whatsappText = `🌟 *New Free Demo Class Registration - Quran Wal Klaam Academy* 🌟
 ----------------------------------
 👤 *Student Name:* ${studentName}
 🎂 *Age:* ${age}
@@ -49,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
 ⏰ *Preferred Time:* ${timeSlot}
 📝 *Special Notes:* ${message}
 ----------------------------------
-_Registered via Quranora.com official portal_`;
+_Registered via Quran Wal Klaam official portal_`;
 
       const encodedMsg = encodeURIComponent(whatsappText);
       const whatsappUrl = `https://wa.me/${ACADEMY_WHATSAPP_NUMBER}?text=${encodedMsg}`;
 
       // 2. Structured Email (for European / International non-WhatsApp users)
       const emailSubject = `New Demo Class Booking - ${studentName} (${course})`;
-      const emailBody = `Assalam-o-Alaikum Quranora Academy,
+      const emailBody = `Assalam-o-Alaikum Quran Wal Klaam Academy,
 
 A new student has registered for a Free Demo Class:
 
@@ -70,7 +70,7 @@ Teacher Preference: ${teacherPref}
 Preferred Schedule: ${days} @ ${timeSlot}
 Special Notes: ${message}
 
-Submitted via Quranora.com`;
+Submitted via Quran Wal Klaam official portal`;
 
       const mailtoUrl = `mailto:${ACADEMY_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 

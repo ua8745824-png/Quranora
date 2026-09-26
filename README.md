@@ -1,9 +1,9 @@
-# 🌟 Quranora — Online Quran Academy
+# 🌟 Quran Wal Klaam — Online Quran Academy
 
 > **"Learn Quran. Live Quran."**  
 > *One-to-One Live Quran Classes with Qualified Male & Female Teachers — From the Comfort of Your Home.*
 
-Quranora is a premier, modern, trustworthy Online Quran Academy serving students and families worldwide across Pakistan, the UK, USA, Canada, Australia, UAE, and Europe.
+Quran Wal Klaam is a premier, modern, trustworthy Online Quran Academy serving students and families worldwide across Pakistan, the UK, USA, Canada, Australia, UAE, and Europe.
 
 ---
 
@@ -53,13 +53,15 @@ Quranora is a premier, modern, trustworthy Online Quran Academy serving students
 
 ---
 
-## 📞 Contact Information
+## 🌐 Official Social Media & Contact
 
 - **WhatsApp / Phone:** [+92 329 5056701](https://wa.me/923295056701)
 - **Email:** [syedumarali37406@gmail.com](mailto:syedumarali37406@gmail.com)
-- **Official YouTube Channel:**
-  - [Al-Qari Syed Umar Ali (@qarisyedumaraliofficial)](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW)
+- **Facebook:** [Quran Wal Klaam on Facebook](https://www.facebook.com/share/1Y1B31d36E/)
+- **Instagram:** [@umar_shah333](https://www.instagram.com/umar_shah333?stkn=azR2NnBsYzB3Z3cz)
+- **TikTok:** [@quranwalklaam](https://www.tiktok.com/@quranwalklaam?_r=1&_t=ZS-9A3dbvwd2Kj)
+- **YouTube:** [Al-Qari Syed Umar Ali (@qarisyedumaraliofficial)](https://youtube.com/@qarisyedumaraliofficial?si=yOeJAe7XqSURmwrW)
 
 ---
 
-© 2026 Quranora Online Quran Academy. All Rights Reserved.
+© 2026 Quran Wal Klaam Online Quran Academy. All Rights Reserved.

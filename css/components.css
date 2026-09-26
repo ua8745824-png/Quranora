@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Quranora Online Quran Academy - Component Styles
+   Quran Wal Klaam Online Quran Academy - Component Styles
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -73,13 +73,14 @@
 }
 
 .logo-name {
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--primary-900);
-  letter-spacing: 0.04em;
-  line-height: 1;
+  letter-spacing: 0.03em;
+  line-height: 1.05;
   text-transform: uppercase;
   font-family: var(--font-sans);
+  white-space: nowrap;
 }
 
 .logo-name span {
@@ -673,7 +674,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   6. Why Choose Quranora Grid
+   6. Why Choose Quran Wal Klaam Grid
    -------------------------------------------------------------------------- */
 .why-grid {
   display: grid;
@@ -1432,7 +1433,7 @@ textarea.form-control {
 }
 
 /* --------------------------------------------------------------------------
-   13. About Quranora Section
+   13. About Quran Wal Klaam Section
    -------------------------------------------------------------------------- */
 .about-grid {
   display: grid;
@@ -1982,6 +1983,27 @@ textarea.form-control {
 
   .tilawat-grid-responsive {
     grid-template-columns: 1fr !important;
+  }
+
+  .logo-name {
+    font-size: 1.15rem;
+  }
+
+  .logo-emblem {
+    width: 38px;
+    height: 38px;
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-name {
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+  }
+  
+  .logo-tagline {
+    font-size: 0.62rem;
   }
 }
 

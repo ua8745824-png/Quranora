@@ -1,5 +1,5 @@
 /**
- * Quranora - Courses Dataset
+ * Quran Wal Klaam - Courses Dataset
  */
 const coursesData = [
   {

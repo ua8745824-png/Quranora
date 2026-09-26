@@ -1,5 +1,5 @@
 /**
- * Quranora - Faculty & Teachers Dataset
+ * Quran Wal Klaam - Faculty & Teachers Dataset
  */
 const teachersData = [
   {

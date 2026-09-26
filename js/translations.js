@@ -1,10 +1,10 @@
 /**
- * Quranora Online Quran Academy - Bilingual Translations (English & Urdu)
+ * Quran Wal Klaam Online Quran Academy - Bilingual Translations (English & Urdu)
  */
 const translations = {
   en: {
     // Brand
-    brandName: "Quranora",
+    brandName: "Quran Wal Klaam",
     brandTagline: "Learn Quran. Live Quran.",
     brandSubTagline: "Learn Quran Online with Tajweed",
     
@@ -60,8 +60,8 @@ const translations = {
     btnEnrollCourse: "Book Free Trial",
     btnCourseDetails: "View Syllabus",
     
-    // Why Choose Quranora
-    whyHeading: "Why Choose Quranora?",
+    // Why Choose Quran Wal Klaam
+    whyHeading: "Why Choose Quran Wal Klaam?",
     whySubheading: "We provide an authentic, respectful, safe, and academically sound environment for your family.",
     why1Title: "1-on-1 Live Interactive Classes",
     why1Desc: "Every student gets undivided attention from their dedicated tutor without distractions.",
@@ -82,7 +82,7 @@ const translations = {
     why9Title: "Worldwide Community",
     why9Desc: "Connecting global Muslim families with authentic Islamic education wherever they live.",
     why10Title: "Free 3-Day Trial Class",
-    why10Desc: "Zero upfront commitment. Experience the Quranora teaching standard firsthand before paying.",
+    why10Desc: "Zero upfront commitment. Experience the Quran Wal Klaam teaching standard firsthand before paying.",
 
     // How It Works
     howHeading: "How It Works",
@@ -116,7 +116,7 @@ const translations = {
 
     // Free Trial Spotlight Banner
     spotlightHeading: "Start Your Quran Journey Today",
-    spotlightText: "Not sure if online Quran learning is right for you? Try a free introductory class and experience Quranora yourself with no obligations.",
+    spotlightText: "Not sure if online Quran learning is right for you? Try a free introductory class and experience Quran Wal Klaam yourself with no obligations.",
     spotlightBtn: "Book Your Free Trial Now",
     spotlightFeature1: "No Credit Card Required",
     spotlightFeature2: "Choose Male or Female Tutor",
@@ -177,19 +177,19 @@ const translations = {
 
     // Reviews Section
     reviewsHeading: "What Our Students & Parents Say",
-    reviewsSubheading: "Read honest feedback from Muslim families worldwide whose lives have been enriched with Quranora.",
+    reviewsSubheading: "Read honest feedback from Muslim families worldwide whose lives have been enriched with Quran Wal Klaam.",
     verifiedParent: "Verified Parent",
     verifiedStudent: "Verified Student",
 
     // About Section
-    aboutHeading: "About Quranora Online Quran Academy",
-    aboutPara1: "Quranora Online Quran Academy is dedicated to making Quranic education accessible, convenient, and meaningful for students around the world.",
+    aboutHeading: "About Quran Wal Klaam Online Quran Academy",
+    aboutPara1: "Quran Wal Klaam Online Quran Academy is dedicated to making Quranic education accessible, convenient, and meaningful for students around the world.",
     aboutPara2: "Our goal is to help children and adults learn the Quran with correct pronunciation, Tajweed, and understanding while creating a respectful, loving, and supportive learning environment.",
     aboutPara3: "We focus not only on recitation mechanics, but also on instilling strong Akhlaq (Islamic manners), foundational Islamic wisdom, and nurturing a lifelong spiritual connection with the Book of Allah (SWT).",
     aboutMissionTitle: "Our Core Mission",
     aboutMissionDesc: "To provide world-class, accessible Quranic literacy with strict adherence to classical Tajweed standards to every Muslim home.",
     aboutTutorsTitle: "Vetted & Certified Faculty",
-    aboutTutorsDesc: "Each Quranora tutor undergoes rigorous testing for Quranic recitation, teaching methodology, and child-safe online conduct.",
+    aboutTutorsDesc: "Each Quran Wal Klaam tutor undergoes rigorous testing for Quranic recitation, teaching methodology, and child-safe online conduct.",
 
     // FAQ Section
     faqHeading: "Frequently Asked Questions",
@@ -206,11 +206,11 @@ const translations = {
     btnEmailUs: "Send an Email",
 
     // Footer
-    footerDesc: "Quranora is a premier global online Quran academy providing authentic, one-on-one Quran, Tajweed, Hifz, and Islamic studies to students of all ages across the globe.",
+    footerDesc: "Quran Wal Klaam is a premier global online Quran academy providing authentic, one-on-one Quran, Tajweed, Hifz, and Islamic studies to students of all ages across the globe.",
     footerQuickLinks: "Quick Links",
     footerCourses: "Popular Courses",
     footerContact: "Contact Information",
-    footerCopyright: "© 2026 Quranora Online Quran Academy. All Rights Reserved.",
+    footerCopyright: "© 2026 Quran Wal Klaam Online Quran Academy. All Rights Reserved.",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms & Conditions",
     footerSafeguarding: "Child Safety Policy",
@@ -225,7 +225,7 @@ const translations = {
 
   ur: {
     // Brand
-    brandName: "Quranora",
+    brandName: "Quran Wal Klaam",
     brandTagline: "Learn Quran. Live Quran.",
     brandSubTagline: "Learn Quran Online with Tajweed",
     
@@ -281,8 +281,8 @@ const translations = {
     btnEnrollCourse: "Book Free Trial",
     btnCourseDetails: "نصاب کی تفصیلات",
 
-    // Why Choose Quranora
-    whyHeading: "Why Choose Quranora?",
+    // Why Choose Quran Wal Klaam
+    whyHeading: "Why Choose Quran Wal Klaam?",
     whySubheading: "ہم آپ کے اور آپ کے بچوں کے لیے ایک محفوظ، اسلامی، اور پروقار تعلیمی ماحول فراہم کرتے ہیں۔",
     why1Title: "One-to-One Live Classes",
     why1Desc: "ہر طالب علم کو استاد کی مکمل توجہ حاصل ہوتی ہے تاکہ وہ آسانی سے سیکھ سکے۔",
@@ -337,7 +337,7 @@ const translations = {
 
     // Free Trial Spotlight Banner
     spotlightHeading: "Start Your Quran Journey Today",
-    spotlightText: "Not sure if online Quran learning is right for you? Try a free introductory class and experience Quranora yourself.",
+    spotlightText: "Not sure if online Quran learning is right for you? Try a free introductory class and experience Quran Wal Klaam yourself.",
     spotlightBtn: "Book Your Free Trial",
     spotlightFeature1: "کریڈٹ کارڈ کی ضرورت نہیں",
     spotlightFeature2: "مرد یا خاتون استاد کا انتخاب",
@@ -403,8 +403,8 @@ const translations = {
     verifiedStudent: "طالب علم",
 
     // About Section
-    aboutHeading: "About Quranora",
-    aboutPara1: "Quranora Online Quran Academy is dedicated to making Quranic education accessible, convenient and meaningful for students around the world.",
+    aboutHeading: "About Quran Wal Klaam",
+    aboutPara1: "Quran Wal Klaam Online Quran Academy is dedicated to making Quranic education accessible, convenient and meaningful for students around the world.",
     aboutPara2: "Our goal is to help children and adults learn the Quran with correct pronunciation, Tajweed and understanding while creating a respectful and supportive learning environment.",
     aboutPara3: "ہم صرف قرآن پڑھانے پر نہیں بلکہ صحیح تلاوت، اخلاق، بنیادی اسلامی تعلیم اور قرآن سے تعلق پیدا کرنے پر توجہ دیتے ہیں۔",
     aboutMissionTitle: "ہمارا وژن",
@@ -427,11 +427,11 @@ const translations = {
     btnEmailUs: "ای میل بھیجیں",
 
     // Footer
-    footerDesc: "Quranora Online Quran Academy — Learn Quran. Live Quran.",
+    footerDesc: "Quran Wal Klaam Online Quran Academy — Learn Quran. Live Quran.",
     footerQuickLinks: "Quick Links",
     footerCourses: "Courses",
     footerContact: "Contact",
-    footerCopyright: "© 2026 Quranora Online Quran Academy. All Rights Reserved.",
+    footerCopyright: "© 2026 Quran Wal Klaam Online Quran Academy. All Rights Reserved.",
     footerPrivacy: "Privacy Policy",
     footerTerms: "Terms & Conditions",
     footerSafeguarding: "Child Safety",

@@ -1,12 +1,12 @@
 /**
- * Quranora Online Quran Academy - Main Application Controller
+ * Quran Wal Klaam Online Quran Academy - Main Application Controller
  */
 
 // Application State
 const appState = {
-  currentLang: localStorage.getItem("quranora_lang") || "en",
-  currentCurrency: localStorage.getItem("quranora_currency") || "USD",
-  currentTheme: localStorage.getItem("quranora_theme") || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"),
+  currentLang: localStorage.getItem("quranwalklaam_lang") || localStorage.getItem("quranora_lang") || "en",
+  currentCurrency: localStorage.getItem("quranwalklaam_currency") || localStorage.getItem("quranora_currency") || "USD",
+  currentTheme: localStorage.getItem("quranwalklaam_theme") || localStorage.getItem("quranora_theme") || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"),
   currentCourseFilter: "all",
   currentTeacherFilter: "all",
   hasSiblingDiscount: false
@@ -46,7 +46,7 @@ function initTheme() {
   // Listen for OS theme preference changes if user hasn't explicitly set preference
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem("quranora_theme")) {
+      if (!localStorage.getItem("quranwalklaam_theme") && !localStorage.getItem("quranora_theme")) {
         appState.currentTheme = e.matches ? "dark" : "light";
         applyTheme(appState.currentTheme);
       }
@@ -56,7 +56,7 @@ function initTheme() {
 
 function toggleTheme() {
   appState.currentTheme = appState.currentTheme === "dark" ? "light" : "dark";
-  localStorage.setItem("quranora_theme", appState.currentTheme);
+  localStorage.setItem("quranwalklaam_theme", appState.currentTheme);
   applyTheme(appState.currentTheme);
 }
 
@@ -113,7 +113,7 @@ function initLanguage() {
 
 function toggleLanguage() {
   appState.currentLang = appState.currentLang === "en" ? "ur" : "en";
-  localStorage.setItem("quranora_lang", appState.currentLang);
+  localStorage.setItem("quranwalklaam_lang", appState.currentLang);
   applyLanguage(appState.currentLang);
   renderCourses();
   renderTeachers();
@@ -460,7 +460,7 @@ function initCurrencySelector() {
 
   select.addEventListener("change", (e) => {
     appState.currentCurrency = e.target.value;
-    localStorage.setItem("quranora_currency", appState.currentCurrency);
+    localStorage.setItem("quranwalklaam_currency", appState.currentCurrency);
     renderPricing();
   });
 
